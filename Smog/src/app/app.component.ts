@@ -7,7 +7,7 @@ import { Router, NavigationEnd } from '@angular/router';
   template: '<router-outlet></router-outlet>'
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
     this.router.events.subscribe((evt) => {
@@ -16,5 +16,11 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
+  }
+
+  logout()
+  {
+    this.dataService.deleteToken();
+    window.location.href = window.location.href;
   }
 }
