@@ -5,7 +5,7 @@
         <div class="col-md-6 mx-auto">
           <div class="card mx-4">
             <div class="card-body p-4">
-              <form>
+              <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
                 <h1>Register</h1>
                 <p class="text-muted">Create your account</p>
                 <div class="input-group mb-3">
