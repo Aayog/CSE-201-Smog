@@ -9,7 +9,7 @@ import { User } from '../models/User';
 export class DataService {
   redirectUrl: string;
  
-  baseUrl:string = "http://localhost/uat/api";
+  baseUrl:string = "http://localhost:8000";
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }

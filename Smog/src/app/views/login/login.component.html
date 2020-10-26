@@ -6,7 +6,7 @@
           <div class="card-group">
             <div class="card p-4">
               <div class="card-body">
-                <div [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
                   <h1>Login</h1>
                   <p class="text-muted">Sign In to your account</p>
                   <div class="input-group mb-3">
@@ -23,13 +23,14 @@
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button type="button" class="btn btn-primary px-4"  [disabled]="!angForm.valid">Login</button>
+                      <!--  [disabled]="!angForm.valid" -->
+                      <button type="submit" class="btn btn-primary px-4" >Login</button>
                     </div>
                     <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0">Forgot password?</button>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
             <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
