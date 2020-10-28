@@ -17,15 +17,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully<br>";
+// echo "Connected successfully<br>";
 
-// $sql = "SELECT username, password FROM User";
+// $sql = "SELECT userName, Password FROM User";
 // $result = $conn->query($sql);
 
 // if ($result->num_rows > 0) {
 //   // output data of each row
 //   while($row = $result->fetch_assoc()) {
-//     echo "Name: " . $row["username"]. " " . $row["password"]. "<br>";
+//     echo $row["userName"]. " " . $row["Password"]. "<br>";
 //   }
 // } else {
 //   echo "0 results";

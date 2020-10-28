@@ -4,11 +4,9 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata))
 {
-	$password = mysqli_real_escape_string($conn, trim($request->password));
-  $username = mysqli_real_escape_string($conn, trim($request->username));
-
-  $sql = "SELECT * FROM User where username='$username' and password='$password'";
-
+	$password = mysqli_real_escape_string($conn, trim($request->Password));
+  $username = mysqli_real_escape_string($conn, trim($request->userName));
+  $sql = "SELECT * FROM User where userName='".$username."' and Password='".$password."'";
   if($result = mysqli_query($conn,$sql))
   {
   $rows = array();
@@ -16,8 +14,9 @@ if(isset($postdata) && !empty($postdata))
     {
       $rows[] = $row;
     }
-  
+    
     echo json_encode($rows); 
+    // http_response_code(400);
   }
   else
   {

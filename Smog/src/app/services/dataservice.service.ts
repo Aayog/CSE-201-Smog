@@ -14,10 +14,14 @@ export class DataService {
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
 
-  public userlogin(username, password) {
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
-        .pipe(map(Usermodule => {
-            this.setToken(User[0].username);
+  public userlogin(userName, Password) {
+    return this.httpClient.post<any>(this.baseUrl + '/login.php', { userName, Password })
+      // .subscribe(
+      //   (res) => console.log(res),
+      //   (err) => console.error(err)
+      // );
+        .pipe(map(User => {
+            this.setToken(User[0].userName);
             this.getLoggedInName.emit(true);
             return User;
             }
@@ -25,8 +29,8 @@ export class DataService {
     );
 }
 
-public userregistration(username, password, email) {
-  return this.httpClient.post<any>(this.baseUrl + '/registration.php', { username, password, email })
+public userregistration(userName, Password, Email) {
+  return this.httpClient.post<any>(this.baseUrl + '/registration.php', { userName, Password, Email }, {responseType: "json"})
       .pipe(map(User => {
           return User;
       }));
@@ -34,6 +38,7 @@ public userregistration(username, password, email) {
 //token
 setToken(token: string) {
   localStorage.setItem('token', token);
+  console.log(token);
 }
  
 getToken() {

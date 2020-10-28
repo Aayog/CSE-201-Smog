@@ -7,8 +7,7 @@ if(isset($postdata) && !empty($postdata))
   $name = mysqli_real_escape_string($mysqli, trim($request->name));
   $pwd = mysqli_real_escape_string($mysqli, (int)$request->pwd);
   $email = mysqli_real_escape_string($mysqli, trim($request->email));
-  $sql = "INSERT INTO User(username,password,email) VALUES ('{$username}','{$password}','{$email}')";
- // echo $sql;
+  $sql = "INSERT INTO User(userName,Password,Email) VALUES ('{$username}','{$password}','{$email}')";
 if ($mysqli->query($sql) === TRUE) {
  
  
