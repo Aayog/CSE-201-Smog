@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
   }
   postdata(angForm1:NgForm)
   {
-    console.log(angForm1.value.username, angForm1.value.password, angForm1.value.email)
     this.dataService.userregistration(angForm1.value.username, angForm1.value.password, angForm1.value.email)
       .pipe(first())
       .subscribe(
@@ -33,6 +32,7 @@ export class RegisterComponent implements OnInit {
               this.router.navigate(['login']);
           },
           error => {
+            alert("Try a different email")
           });
   }
   get email() { return this.angForm.get('email'); }

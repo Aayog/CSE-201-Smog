@@ -16,10 +16,6 @@ export class DataService {
 
   public userlogin(userName, Password) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { userName, Password })
-      // .subscribe(
-      //   (res) => console.log(res),
-      //   (err) => console.error(err)
-      // );
         .pipe(map(User => {
             this.setToken(User[0].userName);
             this.getLoggedInName.emit(true);
@@ -30,7 +26,7 @@ export class DataService {
 }
 
 public userregistration(userName, Password, Email) {
-  return this.httpClient.post<any>(this.baseUrl + '/registration.php', { userName, Password, Email }, {responseType: "json"})
+  return this.httpClient.post<any>(this.baseUrl + '/registration.php', { userName, Password, Email })
       .pipe(map(User => {
           return User;
       }));
