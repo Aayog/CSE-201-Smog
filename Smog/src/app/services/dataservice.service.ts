@@ -34,7 +34,6 @@ public userregistration(userName, Password, Email) {
 //token
 setToken(token: string) {
   localStorage.setItem('token', token);
-  console.log(token);
 }
  
 getToken() {
