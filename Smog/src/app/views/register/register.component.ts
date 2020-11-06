@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       password: ['', Validators.required],
       username: ['', Validators.required],
+      password_repeat: ['', Validators.required],
     });
    }
  
@@ -31,10 +32,12 @@ export class RegisterComponent implements OnInit {
               this.router.navigate(['login']);
           },
           error => {
+            alert("Try a different email")
           });
   }
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }
   get username() { return this.angForm.get('username'); }
+  get password_repeat() { return this.angForm.get('password_repeat'); }
 }
  
