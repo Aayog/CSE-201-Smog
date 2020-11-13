@@ -16,8 +16,8 @@ then
             x=0
         elif [ "$OS" = "ubuntu" ]
         then
-            sudo apt install nodejs
-            sudo apt install npm
+            sudo apt update
+            sudo apt install nodejs npm
             x=0
         else
             echo "Select correct Operating System"
