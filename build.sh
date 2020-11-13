@@ -3,7 +3,8 @@ echo "Welcome to Smog by Nozzle"
 echo "Let's start the build process"
 echo "Do you have npm and angular already installed? y/n"
 read -e choice
-if [ "$choice" != "y" ] 
+if [ "$choice" != "y" ]
+then
     x=1 
     while [ $x -eq 1 ]
     do
