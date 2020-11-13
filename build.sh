@@ -18,7 +18,7 @@ then
         then
             sudo apt update
             sudo apt install nodejs npm
-            npm install -g @angular/cli
+            yes | npm install -g @angular/cli
             x=0
         else
             echo "Select correct Operating System"
@@ -42,4 +42,5 @@ cd php
 php -S localhost:8000 &
 cd ..
 cd Smog
-ng serve &
+yes | npm install --save-dev @angular-devkit/build-angular
+ng serve --sourcemap=false&
