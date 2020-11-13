@@ -19,11 +19,7 @@
     "import-blacklist": [
       true,
       "rxjs/Rx"
-    ],
-    "import-spacing": true,
-    "indent": [
-      true,
-      "spaces"
+    ],cd
     ],
     "interface-over-type-literal": true,
     "label-position": true,

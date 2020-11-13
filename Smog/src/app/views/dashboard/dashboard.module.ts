@@ -6,15 +6,18 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { GameCardsComponent } from '../game-cards/game-cards.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
     FormsModule,
     DashboardRoutingModule,
     ChartsModule,
+    CommonModule,
     BsDropdownModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
   ],
-  declarations: [ DashboardComponent ]
+  declarations: [ DashboardComponent, GameCardsComponent ]
 })
 export class DashboardModule { }

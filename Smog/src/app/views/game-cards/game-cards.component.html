@@ -1,0 +1,14 @@
+<div class="row">
+<div *ngFor="let game of games" class="col-md-3">
+    <div class="container">
+    <div class="card" style="width: 18rem;">
+        <img [src] ="game.Img" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{game.Title}}</h5>
+        <p class="card-text">{{game.Descript}}</p>
+        <a [href]="game.Link" class="btn btn-primary">See more..</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
