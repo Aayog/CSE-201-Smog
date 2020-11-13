@@ -3,19 +3,7 @@ echo "Welcome to Smog by Nozzle"
 echo "Let's start the build process"
 echo "Do you have npm and angular already installed? y/n"
 read -e choice
-if [ "$choice" = "y" ]
-then
-    echo "Does this machine have php installed? y/n"
-    read -e php 
-    if [ "$php" = "y" ] 
-    then 
-        echo "Ready to run npm"
-    else
-        sudo apt install software-properties-common
-        sudo add-apt-repository ppa:ondrej/php
-        sudo apt install php7.3 php7.3-common php7.3-opcache php7.3-cli php7.3-gd php7.3-curl php7.3-mysql
-    fi
-else 
+if [ "$choice" != "y" ] 
     x=1 
     while [ $x -eq 1 ]
     do
@@ -36,6 +24,18 @@ else
         fi
     done
 fi
+
+echo "Does this machine have php installed? y/n"
+read -e php 
+if [ "$php" = "y" ] 
+then 
+    echo "Ready to run npm"
+else
+    sudo apt install software-properties-common
+    sudo add-apt-repository ppa:ondrej/php
+    sudo apt install php7.3 php7.3-common php7.3-opcache php7.3-cli php7.3-gd php7.3-curl php7.3-mysql
+fi
+
 cd php
 php -S localhost:8000
 cd ..
