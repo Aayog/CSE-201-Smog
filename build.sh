@@ -18,6 +18,7 @@ then
         then
             sudo apt update
             sudo apt install nodejs npm
+            npm install -g @angular/cli
             x=0
         else
             echo "Select correct Operating System"
