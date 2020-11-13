@@ -38,7 +38,7 @@ else
 fi
 
 cd php
-php -S localhost:8000
+php -S localhost:8000 &
 cd ..
 cd Smog
-ng serve
+ng serve &
