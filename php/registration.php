@@ -1,4 +1,8 @@
 <?php
+/*
+Registration
+
+*/
 header("Access-Control-Allow-Origin: *");
 include_once("config.php");
 $postdata = file_get_contents("php://input");
@@ -11,8 +15,8 @@ if(isset($postdata) && !empty($postdata))
   $Email = mysqli_real_escape_string($conn, trim($request->Email));
   $sql = "INSERT INTO User(userName,Password,Email) VALUES ('".$userName."','".$Password."','".$Email."')";
   if ($conn->query($sql) === TRUE) {
- 
- 
+
+
     $authdata = [
       'userName' => $userName,
 	    'Password' => '',
