@@ -1,5 +1,6 @@
+<input type="text" [(ngModel)]="queryString" id="search" placeholder="Search any game" class="form-control">
 <div class="row">
-<div *ngFor="let game of games" class="col-md-3">
+<div *ngFor="let game of games | GameFilterPipe: queryString" class="col-md-3">
     <div class="container">
     <div class="card" style="width: 18rem;">
         <img [src] ="game.Img" class="card-img-top" alt="...">

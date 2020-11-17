@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../../models/Game';
 import { GameserviceService } from '../../services/gameservice.service';
+import { GameFilterPipe } from './gamefilterpipe';
 
 @Component({
   selector: 'app-game-cards',

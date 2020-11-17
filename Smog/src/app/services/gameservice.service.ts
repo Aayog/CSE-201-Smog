@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
 import { Game } from '../models/Game';
 
+// Filter games https://stackoverflow.com/questions/40678206/angular-2-filter-search-list
+
 @Injectable({
   providedIn: 'root'
 })
