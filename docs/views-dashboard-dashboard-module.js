@@ -571,7 +571,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<input type=\"text\" [(ngModel)]=\"queryString\" id=\"search\" placeholder=\"Search any game\" class=\"form-control\">\n<div class=\"row\">\n<div *ngFor=\"let game of games | GameFilterPipe: queryString\" class=\"col-md-3\">\n    <div class=\"container\">\n    <div class=\"card\" style=\"width: 18rem;\">\n        <img [src] =\"game.Img\" class=\"card-img-top\" alt=\"...\">\n        <div class=\"card-body\">\n        <h5 class=\"card-title\">{{game.Title}}</h5>\n        <p class=\"card-text\">{{game.Descript}}</p>\n        <a [href]=\"game.Link\" class=\"btn btn-primary\">See more..</a>\n        </div>\n    </div>\n</div>\n</div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<input type=\"text\" [(ngModel)]=\"queryString\" id=\"search\" placeholder=\"Search any game\" class=\"form-control\">\n<div class=\"row\">\n<div *ngFor=\"let game of games | GameFilterPipe: queryString\" class=\"col-lg-3 d-flex align-items-stretch\">\n        <div class=\"card\" style=\"width: 18rem;\">\n            <img [src] =\"game.Img\" class=\"card-img-top\" alt=\"...\">\n            <div class=\"card-body\">\n            <h5 class=\"card-title\">{{game.Title}}</h5>\n            <p class=\"card-text\">{{game.Descript}}</p>\n            <h1>Comments: </h1>\n            <a [href]=\"game.Link\" class=\"align-self-end btn btn-primary\">See more..</a>\n        </div>\n</div>\n</div>\n</div>");
 
 /***/ }),
 
@@ -1253,7 +1253,7 @@ __webpack_require__.r(__webpack_exports__);
 var GameserviceService = /** @class */ (function () {
     function GameserviceService(httpClient) {
         this.httpClient = httpClient;
-        this.baseUrl = "https://34.204.91.132";
+        this.baseUrl = "https://34.204.91.132/";
     }
     GameserviceService.prototype.getAllGames = function () {
         var _this = this;
@@ -1783,7 +1783,7 @@ var DashboardModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2dhbWUtY2FyZHMvZ2FtZS1jYXJkcy5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".card {\n    overflow-y: auto;\n}\nh1 {\n    font-size: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3MvZ2FtZS1jYXJkcy9nYW1lLWNhcmRzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLGVBQWU7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9nYW1lLWNhcmRzL2dhbWUtY2FyZHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkIHtcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xufVxuaDEge1xuICAgIGZvbnQtc2l6ZTogMTVweDtcbn0iXX0= */");
 
 /***/ }),
 
