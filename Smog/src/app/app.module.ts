@@ -42,7 +42,6 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { GameCardsComponent } from './views/game-cards/game-cards.component';
 
 @NgModule({
   imports: [
@@ -73,6 +72,6 @@ import { GameCardsComponent } from './views/game-cards/game-cards.component';
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }

@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { GameCardsComponent } from '../game-cards/game-cards.component';
 import { CommonModule } from '@angular/common';
+import { GameFilterPipe } from '../game-cards/gamefilterpipe';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     BsDropdownModule,
     ButtonsModule.forRoot(),
   ],
-  declarations: [ DashboardComponent, GameCardsComponent ]
+  declarations: [ DashboardComponent, GameCardsComponent, GameFilterPipe ],
+  exports: [GameFilterPipe]
 })
 export class DashboardModule { }
