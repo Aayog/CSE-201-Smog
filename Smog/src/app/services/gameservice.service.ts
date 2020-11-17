@@ -10,7 +10,7 @@ import { Game } from '../models/Game';
 export class GameserviceService {
   redirectUrl: string;
  
-  baseUrl:string = "http://localhost:8000";
+  baseUrl:string = "https://34.204.91.132/";
 
   games: Game[];
 
