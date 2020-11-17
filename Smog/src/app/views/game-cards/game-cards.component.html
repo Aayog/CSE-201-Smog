@@ -1,6 +1,5 @@
 <input type="text" [(ngModel)]="queryString" id="search" placeholder="Search any game" class="form-control">
 <div class="row">
-<<<<<<< HEAD
 <div *ngFor="let game of games" class="col-lg-3 d-flex align-items-stretch">
         <div class="card" style="width: 18rem;">
             <img [src] ="game.Img" class="card-img-top" alt="...">
@@ -9,16 +8,6 @@
             <p class="card-text">{{game.Descript}}</p>
             <h1>Comments: </h1>
             <a [href]="game.Link" class="align-self-end btn btn-primary">See more..</a>
-=======
-<div *ngFor="let game of games | GameFilterPipe: queryString" class="col-md-3">
-    <div class="container">
-    <div class="card" style="width: 18rem;">
-        <img [src] ="game.Img" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">{{game.Title}}</h5>
-        <p class="card-text">{{game.Descript}}</p>
-        <a [href]="game.Link" class="btn btn-primary">See more..</a>
->>>>>>> 4685592ef4c21c1eae550c1db52ab6eb7528356f
         </div>
 </div>
 </div>
