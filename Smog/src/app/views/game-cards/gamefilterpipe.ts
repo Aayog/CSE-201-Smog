@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+//http://www.angulartutorial.net/2017/03/simple-search-using-pipe-in-angular-2.html
 
 @Pipe({
     name: 'GameFilterPipe',

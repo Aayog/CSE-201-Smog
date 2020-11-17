@@ -1850,6 +1850,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
+//http://www.angulartutorial.net/2017/03/simple-search-using-pipe-in-angular-2.html
 var GameFilterPipe = /** @class */ (function () {
     function GameFilterPipe() {
     }
