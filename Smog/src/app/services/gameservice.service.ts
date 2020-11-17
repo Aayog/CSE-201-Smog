@@ -12,11 +12,7 @@ import { Game } from '../models/Game';
 export class GameserviceService {
   redirectUrl: string;
  
-<<<<<<< HEAD
   baseUrl:string = "https://34.204.91.132/";
-=======
-  baseUrl:string = "https://34.204.91.132";
->>>>>>> 4685592ef4c21c1eae550c1db52ab6eb7528356f
 
   games: Game[];
 
