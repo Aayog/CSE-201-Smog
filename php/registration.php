@@ -1,7 +1,9 @@
 <?php
 /*
 Registration
-
+Uses the database information to determine if the user already exists
+input database information
+returns $authdata which is the data that the user inputs when registering.
 */
 header("Access-Control-Allow-Origin: *");
 include_once("config.php");

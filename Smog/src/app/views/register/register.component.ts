@@ -3,7 +3,12 @@ import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angula
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/dataservice.service';
- 
+ /*
+Register Component.
+Imports infromation from the data base, and the information from the user.
+Validates the user given information with the data in the database and then if there is no match, gives the user the ability to log in to the site and adds them to the database.
+outputs errors if the email is incorrect.
+ */
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'register.component.html'
@@ -12,7 +17,7 @@ import { DataService } from '../../services/dataservice.service';
 export class RegisterComponent implements OnInit {
   angForm: FormGroup;
   constructor(private fb: FormBuilder,private dataService: DataService,private router:Router) {
- 
+
     this.angForm = this.fb.group({
       email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       password: ['', Validators.required],
@@ -20,7 +25,7 @@ export class RegisterComponent implements OnInit {
       password_repeat: ['', Validators.required],
     });
    }
- 
+
   ngOnInit() {
   }
   postdata(angForm1:NgForm)
@@ -40,4 +45,3 @@ export class RegisterComponent implements OnInit {
   get username() { return this.angForm.get('username'); }
   get password_repeat() { return this.angForm.get('password_repeat'); }
 }
- 
