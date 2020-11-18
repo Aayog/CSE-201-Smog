@@ -784,16 +784,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./containers */ "./src/app/containers/index.ts");
-/* harmony import */ var _services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/authguard.guard */ "./src/app/services/authguard.guard.ts");
-/* harmony import */ var _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/error/404.component */ "./src/app/views/error/404.component.ts");
-/* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
-/* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
-/* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
+/* harmony import */ var _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/error/404.component */ "./src/app/views/error/404.component.ts");
+/* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
+/* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
+/* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
 
 
 
 // Import Containers
-
 
 
 
@@ -807,28 +805,28 @@ var routes = [
     },
     {
         path: '404',
-        component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__["P404Component"],
+        component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__["P404Component"],
         data: {
             title: 'Page 404'
         }
     },
     {
         path: '500',
-        component: _views_error_500_component__WEBPACK_IMPORTED_MODULE_6__["P500Component"],
+        component: _views_error_500_component__WEBPACK_IMPORTED_MODULE_5__["P500Component"],
         data: {
             title: 'Page 500'
         }
     },
     {
         path: 'login',
-        component: _views_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
+        component: _views_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"],
         data: {
             title: 'Login Page'
         }
     },
     {
         path: 'register',
-        component: _views_register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"],
+        component: _views_register_register_component__WEBPACK_IMPORTED_MODULE_7__["RegisterComponent"],
         data: {
             title: 'Register Page'
         }
@@ -851,7 +849,6 @@ var routes = [
             {
                 path: 'dashboard',
                 loadChildren: function () { return Promise.all(/*! import() | views-dashboard-dashboard-module */[__webpack_require__.e("default~views-dashboard-dashboard-module~views-theme-theme-module~views-widgets-widgets-module"), __webpack_require__.e("common"), __webpack_require__.e("views-dashboard-dashboard-module")]).then(__webpack_require__.bind(null, /*! ./views/dashboard/dashboard.module */ "./src/app/views/dashboard/dashboard.module.ts")).then(function (m) { return m.DashboardModule; }); },
-                canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
             },
             {
                 path: 'icons',
@@ -871,7 +868,7 @@ var routes = [
             }
         ]
     },
-    { path: '**', component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__["P404Component"] }
+    { path: '**', component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__["P404Component"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -960,57 +957,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/app/services/authguard.guard.ts":
-/*!*********************************************!*\
-  !*** ./src/app/services/authguard.guard.ts ***!
-  \*********************************************/
-/*! exports provided: AuthguardGuard */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthguardGuard", function() { return AuthguardGuard; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _dataservice_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dataservice.service */ "./src/app/services/dataservice.service.ts");
-
-
-
-
-var AuthguardGuard = /** @class */ (function () {
-    function AuthguardGuard(dataService, router) {
-        this.dataService = dataService;
-        this.router = router;
-    }
-    AuthguardGuard.prototype.canActivate = function (route, state) {
-        var routeurl = state.url;
-        return this.isLogin(routeurl);
-    };
-    AuthguardGuard.prototype.isLogin = function (routeurl) {
-        if (this.dataService.isLoggedIn()) {
-            return true;
-        }
-        this.dataService.redirectUrl = routeurl;
-        this.router.navigate(['/login'], { queryParams: { returnUrl: routeurl } });
-    };
-    AuthguardGuard.ctorParameters = function () { return [
-        { type: _dataservice_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
-    ]; };
-    AuthguardGuard = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_dataservice_service__WEBPACK_IMPORTED_MODULE_3__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
-    ], AuthguardGuard);
-    return AuthguardGuard;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/services/dataservice.service.ts":
 /*!*************************************************!*\
   !*** ./src/app/services/dataservice.service.ts ***!
@@ -1032,7 +978,7 @@ __webpack_require__.r(__webpack_exports__);
 var DataService = /** @class */ (function () {
     function DataService(httpClient) {
         this.httpClient = httpClient;
-        this.baseUrl = "api";
+        this.baseUrl = "https://34.204.91.132/api/";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     DataService.prototype.userlogin = function (userName, Password) {
