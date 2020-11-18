@@ -1253,7 +1253,7 @@ __webpack_require__.r(__webpack_exports__);
 var GameserviceService = /** @class */ (function () {
     function GameserviceService(httpClient) {
         this.httpClient = httpClient;
-        this.baseUrl = "https://34.204.91.132/";
+        this.baseUrl = "localhost/";
     }
     GameserviceService.prototype.getAllGames = function () {
         var _this = this;
