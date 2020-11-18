@@ -496,28 +496,6 @@ var navItems = [
         ]
     },
     {
-        name: 'Buttons',
-        url: '/buttons',
-        icon: 'icon-cursor',
-        children: [
-            {
-                name: 'Buttons',
-                url: '/buttons/buttons',
-                icon: 'icon-cursor'
-            },
-            {
-                name: 'Dropdowns',
-                url: '/buttons/dropdowns',
-                icon: 'icon-cursor'
-            },
-            {
-                name: 'Brand Buttons',
-                url: '/buttons/brand-buttons',
-                icon: 'icon-cursor'
-            }
-        ]
-    },
-    {
         name: 'Charts',
         url: '/charts',
         icon: 'icon-pie-chart'
@@ -865,10 +843,6 @@ var routes = [
             {
                 path: 'base',
                 loadChildren: function () { return __webpack_require__.e(/*! import() | views-base-base-module */ "views-base-base-module").then(__webpack_require__.bind(null, /*! ./views/base/base.module */ "./src/app/views/base/base.module.ts")).then(function (m) { return m.BaseModule; }); }
-            },
-            {
-                path: 'buttons',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-buttons-buttons-module */ "views-buttons-buttons-module").then(__webpack_require__.bind(null, /*! ./views/buttons/buttons.module */ "./src/app/views/buttons/buttons.module.ts")).then(function (m) { return m.ButtonsModule; }); }
             },
             {
                 path: 'charts',
