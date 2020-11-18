@@ -1139,7 +1139,6 @@ var RequestService = /** @class */ (function () {
     }
     RequestService.prototype.gamerequest = function (title, desc) {
         var username = this.dataService.getToken();
-        console.log(title, desc, username);
         return this.httpClient.post(this.baseUrl + 'gamerequests.php', { title: title, desc: desc, username: username });
     };
     RequestService.ctorParameters = function () { return [
