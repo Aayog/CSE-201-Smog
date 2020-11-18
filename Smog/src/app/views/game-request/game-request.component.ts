@@ -13,7 +13,7 @@ import { DataService } from '../../services/dataservice.service';
 export class GameRequestComponent implements OnInit {
 
   angForm: FormGroup;
-  constructor(private fb: FormBuilder,private gameRequestService: RequestService, private dataService: DataService, private router:Router) {
+  constructor(private fb: FormBuilder,private gameRequestService: RequestService, private router:Router) {
  
     this.angForm = this.fb.group({
       title: ['', [Validators.required,Validators.minLength(1)]],
@@ -23,9 +23,9 @@ export class GameRequestComponent implements OnInit {
  
   ngOnInit() {
   }
-  postdata(angForm1)
+  gamerequest(angForm1)
   {
-    this.gameRequestService.gamerequest(this.dataService.getLoggedInName, angForm1.value.title, angForm1.value.desc)
+    this.gameRequestService.gamerequest(angForm1.value.title, angForm1.value.desc)
       .pipe(first())
       .subscribe(
           data => {

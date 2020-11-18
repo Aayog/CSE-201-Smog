@@ -14,5 +14,7 @@ if(isset($postdata) && !empty($postdata))
   if ($conn->query($sql) !== TRUE) {
     http_response_code(400);
   }
+  echo $sql;
+  http_response_code(404);
 }
 ?>

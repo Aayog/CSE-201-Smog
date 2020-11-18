@@ -26,7 +26,7 @@ public userlogin(userName, Password) {
 }
 
 public userregistration(userName, Password, Email) {
-  return this.httpClient.post<any>(this.baseUrl + '/registration.php', { userName, Password, Email })
+  return this.httpClient.post<any>(this.baseUrl + 'registration.php', { userName, Password, Email })
       .pipe(map(User => {
           return User;
       }));

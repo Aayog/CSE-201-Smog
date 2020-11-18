@@ -1,6 +1,5 @@
 <div class="card">
-    
-    <form [formGroup]="angForm" (ngSubmit)="postrequest(angForm)" autocomplete="off">
+    <form [formGroup]="angForm" (ngSubmit)="gamerequest(angForm)" autocomplete="off">
         <div class="card-header">
             <h1>Request to add a game</h1>
         </div>
@@ -15,11 +14,11 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-info"></i></span>
                 </div>
-                <textarea cols=20 rows=5 formControlName="desc" class="form-control" placeholder="Game Description" autocomplete="desc" required>
+                <textarea cols=20 rows=5 formControlName="desc" class="form-control" placeholder="Game Description" autocomplete="desc" required></textarea>
             </div>
         </div>
         <div class="card-footer">
-        <button type="link" class="btn btn-primary">Notifications</button>
+            <button type="submit" class="btn btn-block btn-success">Submit Request</button>
         </div>
     </form>
 </div>
