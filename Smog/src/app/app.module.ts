@@ -42,6 +42,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GameRequestComponent } from './views/game-request/game-request.component';
 
 @NgModule({
   imports: [
@@ -67,6 +68,7 @@ import { HttpClientModule } from '@angular/common/http';
     P500Component,
     LoginComponent,
     RegisterComponent,
+    GameRequestComponent,
   ],
   providers: [{
     provide: LocationStrategy,

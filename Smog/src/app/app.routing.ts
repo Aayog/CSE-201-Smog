@@ -7,6 +7,7 @@ import { AuthguardGuard } from './services/authguard.guard';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
+import { GameRequestComponent } from './views/game-request/game-request.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
@@ -45,6 +46,13 @@ export const routes: Routes = [
     }
   },
   {
+    path: 'requests',
+    component: GameRequestComponent,
+    data: {
+      title: 'Request Page'
+    }
+  },
+  {
     path: '',
     component: DefaultLayoutComponent,
     data: {
@@ -62,7 +70,7 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
-        // canActivate: [AuthguardGuard]
+        canActivate: [AuthguardGuard]
       },
       {
         path: 'icons',

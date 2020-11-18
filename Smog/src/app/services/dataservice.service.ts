@@ -12,17 +12,17 @@ export class DataService {
   baseUrl:string = "https://34.204.91.132/api/";
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-  constructor(private httpClient : HttpClient) { }
+constructor(private httpClient : HttpClient) { }
 
-  public userlogin(userName, Password) {
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { userName, Password })
-        .pipe(map(User => {
-            this.setToken(User[0].userName);
-            this.getLoggedInName.emit(true);
-            return User;
-            }
-        )
-    );
+public userlogin(userName, Password) {
+  return this.httpClient.post<any>(this.baseUrl + '/login.php', { userName, Password })
+      .pipe(map(User => {
+          this.setToken(User[0].userName);
+          this.getLoggedInName.emit(true);
+          return User;
+          }
+      )
+  );
 }
 
 public userregistration(userName, Password, Email) {
