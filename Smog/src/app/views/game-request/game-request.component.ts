@@ -17,7 +17,7 @@ export class GameRequestComponent implements OnInit {
  
     this.angForm = this.fb.group({
       title: ['', [Validators.required,Validators.minLength(1)]],
-      desc: ['', Validators.required],
+      desc: ['', [Validators.required,Validators.minLength(1), Validators.maxLength(500)]],
     });
    }
  

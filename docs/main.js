@@ -1262,7 +1262,7 @@ var GameRequestComponent = /** @class */ (function () {
         this.router = router;
         this.angForm = this.fb.group({
             title: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(1)]],
-            desc: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            desc: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(500)]],
         });
     }
     GameRequestComponent.prototype.ngOnInit = function () {
