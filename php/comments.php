@@ -11,13 +11,12 @@ if($result = mysqli_query($conn,$sql))
   $cr = 0;
   while($row = mysqli_fetch_assoc($result))
   {
-    $comments[$cr]['Title'] = $row['Title'];
+    $comments[$cr]['gTitle'] = $row['gTitle'];
     $comments[$cr]['Username'] = $row['Username'];
     $comments[$cr]['Comment'] = $row['Comment'];
     $cr++;
   }
-  
-  echo json_encode(['data'=>$games]); 
+  echo json_encode(['data'=>$comments]); 
   // http_response_code(400);
 }
 else
