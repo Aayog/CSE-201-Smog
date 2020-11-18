@@ -1058,7 +1058,7 @@ __webpack_require__.r(__webpack_exports__);
 var DataService = /** @class */ (function () {
     function DataService(httpClient) {
         this.httpClient = httpClient;
-        this.baseUrl = "localhost/";
+        this.baseUrl = "api";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     DataService.prototype.userlogin = function (userName, Password) {

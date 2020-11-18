@@ -12,7 +12,7 @@ import { Game } from '../models/Game';
 export class GameserviceService {
   redirectUrl: string;
  
-  baseUrl:string = "localhost/";
+  baseUrl:string = "api";
 
   games: Game[];
 
