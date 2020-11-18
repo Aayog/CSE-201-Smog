@@ -1248,10 +1248,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_request_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/request.service */ "./src/app/services/request.service.ts");
-
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_request_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/request.service */ "./src/app/services/request.service.ts");
 
 
 
@@ -1272,7 +1270,6 @@ var GameRequestComponent = /** @class */ (function () {
     GameRequestComponent.prototype.gamerequest = function (angForm1) {
         var _this = this;
         this.gameRequestService.gamerequest(angForm1.value.title, angForm1.value.desc)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["first"])())
             .subscribe(function (data) {
             _this.router.navigate(['dashboard']);
         }, function (error) {
@@ -1291,8 +1288,8 @@ var GameRequestComponent = /** @class */ (function () {
     });
     GameRequestComponent.ctorParameters = function () { return [
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-        { type: _services_request_service__WEBPACK_IMPORTED_MODULE_5__["RequestService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+        { type: _services_request_service__WEBPACK_IMPORTED_MODULE_4__["RequestService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
     ]; };
     GameRequestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1300,7 +1297,7 @@ var GameRequestComponent = /** @class */ (function () {
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./game-request.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/game-request/game-request.component.html")).default,
             styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./game-request.component.css */ "./src/app/views/game-request/game-request.component.css")).default]
         }),
-        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _services_request_service__WEBPACK_IMPORTED_MODULE_5__["RequestService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _services_request_service__WEBPACK_IMPORTED_MODULE_4__["RequestService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], GameRequestComponent);
     return GameRequestComponent;
 }());

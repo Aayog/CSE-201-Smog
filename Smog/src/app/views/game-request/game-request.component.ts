@@ -26,7 +26,6 @@ export class GameRequestComponent implements OnInit {
   gamerequest(angForm1)
   {
     this.gameRequestService.gamerequest(angForm1.value.title, angForm1.value.desc)
-      .pipe(first())
       .subscribe(
           data => {
               this.router.navigate(['dashboard']);
