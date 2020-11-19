@@ -42,7 +42,11 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { CommentComponent } from './views/comment/comment.component';
+=======
+import { GameRequestComponent } from './views/game-request/game-request.component';
+>>>>>>> 8695d495b87606215977dd57c96880a81b555b1e
 
 @NgModule({
   imports: [
@@ -68,7 +72,11 @@ import { CommentComponent } from './views/comment/comment.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
+<<<<<<< HEAD
     CommentComponent,
+=======
+    GameRequestComponent,
+>>>>>>> 8695d495b87606215977dd57c96880a81b555b1e
   ],
   providers: [{
     provide: LocationStrategy,

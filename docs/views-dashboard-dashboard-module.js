@@ -708,7 +708,7 @@ var GameserviceService = /** @class */ (function () {
     }
     GameserviceService.prototype.getAllGames = function () {
         var _this = this;
-        return this.httpClient.get(this.baseUrl + "/game.php").pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.httpClient.get(this.baseUrl + "game.php").pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             _this.games = res['data'];
             return _this.games;
         }));
