@@ -14,6 +14,7 @@ if($result = mysqli_query($conn,$sql))
     $requests[$cr]['Title'] = $row['gTitle'];
     $requests[$cr]['Descript'] = $row['gDescript'];
     $requests[$cr]['Username'] = $row['userName'];
+    $requests[$cr]['Id'] = $row['reqID'];
     $cr++;
   }
   
