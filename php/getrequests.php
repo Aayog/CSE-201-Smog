@@ -3,7 +3,7 @@
 
 include_once("config.php");
 
-$sql = "SELECT * FROM Requests";
+$sql = "SELECT * FROM UserRequests";
 $requests = [];
 
 if($result = mysqli_query($conn,$sql))
