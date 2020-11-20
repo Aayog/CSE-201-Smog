@@ -311,7 +311,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header\n  [navbarBrandRouterLink]=\"['/dashboard']\"\n  [fixed]=\"true\"\n  [navbarBrandFull]=\"{src: 'assets/nozzleGuy.jpg', width: 89, height: 25, alt: 'Nozzle Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/nozzleGuy.jpg', width: 30, height: 30, alt: 'Nozzle Logo'}\"\n  [sidebarToggler]=\"'lg'\"\n  [asideMenuToggler]=\"'lg'\">\n  <ul class=\"nav navbar-nav d-md-down-none\">\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Dashboard</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Users</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Settings</a>\n    </li>\n  </ul>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/requests']\"><i class=\"icon-plus\"></i> &nbsp;Add Request</a>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <app-sidebar #appSidebar [fixed]=\"true\" [display]=\"'lg'\" [minimized]=\"sidebarMinimized\" (minimizedChange)=\"toggleMinimize($event)\">\n    <app-sidebar-nav [navItems]=\"navItems\" [perfectScrollbar] [disabled]=\"appSidebar.minimized\"></app-sidebar-nav>\n    <app-sidebar-minimizer></app-sidebar-minimizer>\n  </app-sidebar>\n  <!-- Main content -->\n  <main class=\"main\">\n    <!-- Breadcrumb -->\n    <!-- breaking change 'cui-breadcrumb' -->\n    <cui-breadcrumb>\n      <!-- Breadcrumb Menu-->\n      <li class=\"breadcrumb-menu d-md-down-none\">\n        <div class=\"btn-group\" role=\"group\" aria-label=\"Button group with nested dropdown\">\n          <a class=\"btn\" href=\"#\"><i class=\"icon-speech\"></i></a>\n          <a class=\"btn\" [routerLink]=\"['/dashboard']\"><i class=\"icon-graph\"></i> &nbsp;Dashboard</a>\n          <a class=\"btn\" href=\"#\"><i class=\"icon-settings\"></i> &nbsp;Settings</a>\n        </div>\n      </li>\n    </cui-breadcrumb>\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div><!-- /.container-fluid -->\n  </main>\n</div>\n<app-footer>\n  <span><a href=\"https://coreui.io\">CoreUI</a> &copy; 2018 creativeLabs.</span>\n  <span class=\"ml-auto\">Powered by <a href=\"https://coreui.io/angular\">CoreUI for Angular</a></span>\n</app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header\n  [navbarBrandRouterLink]=\"['/dashboard']\"\n  [fixed]=\"true\"\n  [navbarBrandFull]=\"{src: 'assets/nozzleGuy.jpg', width: 89, height: 25, alt: 'Nozzle Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/nozzleGuy.jpg', width: 30, height: 30, alt: 'Nozzle Logo'}\"\n>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/requests']\"><i class=\"icon-plus\"></i> &nbsp;Add Request</a>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <!-- Main content -->\n  <main class=\"main\">\n\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div><!-- /.container-fluid -->\n  </main>\n</div>\n<app-footer>\n  <span><a href=\"https://coreui.io\">CoreUI</a> &copy; 2018 creativeLabs.</span>\n  <span class=\"ml-auto\">Powered by <a href=\"https://coreui.io/angular\">CoreUI for Angular</a></span>\n</app-footer>\n");
 
 /***/ }),
 
@@ -400,231 +400,6 @@ webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
 webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
-
-/***/ }),
-
-/***/ "./src/app/_nav.ts":
-/*!*************************!*\
-  !*** ./src/app/_nav.ts ***!
-  \*************************/
-/*! exports provided: navItems */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navItems", function() { return navItems; });
-var navItems = [
-    {
-        name: 'Dashboard',
-        url: '/dashboard',
-        icon: 'icon-speedometer',
-        badge: {
-            variant: 'info',
-            text: 'NEW'
-        }
-    },
-    {
-        title: true,
-        name: 'Theme'
-    },
-    {
-        name: 'Colors',
-        url: '/theme/colors',
-        icon: 'icon-drop'
-    },
-    {
-        name: 'Typography',
-        url: '/theme/typography',
-        icon: 'icon-pencil'
-    },
-    {
-        title: true,
-        name: 'Components'
-    },
-    {
-        name: 'Base',
-        url: '/base',
-        icon: 'icon-puzzle',
-        children: [
-            {
-                name: 'Cards',
-                url: '/base/cards',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Carousels',
-                url: '/base/carousels',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Collapses',
-                url: '/base/collapses',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Forms',
-                url: '/base/forms',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Navbars',
-                url: '/base/navbars',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Pagination',
-                url: '/base/paginations',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Popovers',
-                url: '/base/popovers',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Progress',
-                url: '/base/progress',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Switches',
-                url: '/base/switches',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Tables',
-                url: '/base/tables',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Tabs',
-                url: '/base/tabs',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Tooltips',
-                url: '/base/tooltips',
-                icon: 'icon-puzzle'
-            }
-        ]
-    },
-    {
-        name: 'Charts',
-        url: '/charts',
-        icon: 'icon-pie-chart'
-    },
-    {
-        name: 'Icons',
-        url: '/icons',
-        icon: 'icon-star',
-        children: [
-            {
-                name: 'CoreUI Icons',
-                url: '/icons/coreui-icons',
-                icon: 'icon-star',
-                badge: {
-                    variant: 'success',
-                    text: 'NEW'
-                }
-            },
-            {
-                name: 'Flags',
-                url: '/icons/flags',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Font Awesome',
-                url: '/icons/font-awesome',
-                icon: 'icon-star',
-                badge: {
-                    variant: 'secondary',
-                    text: '4.7'
-                }
-            },
-            {
-                name: 'Simple Line Icons',
-                url: '/icons/simple-line-icons',
-                icon: 'icon-star'
-            }
-        ]
-    },
-    {
-        name: 'Notifications',
-        url: '/notifications',
-        icon: 'icon-bell',
-        children: [
-            {
-                name: 'Alerts',
-                url: '/notifications/alerts',
-                icon: 'icon-bell'
-            },
-            {
-                name: 'Badges',
-                url: '/notifications/badges',
-                icon: 'icon-bell'
-            },
-            {
-                name: 'Modals',
-                url: '/notifications/modals',
-                icon: 'icon-bell'
-            }
-        ]
-    },
-    {
-        name: 'Widgets',
-        url: '/widgets',
-        icon: 'icon-calculator',
-        badge: {
-            variant: 'info',
-            text: 'NEW'
-        }
-    },
-    {
-        divider: true
-    },
-    {
-        title: true,
-        name: 'Extras',
-    },
-    {
-        name: 'Pages',
-        url: '/pages',
-        icon: 'icon-star',
-        children: [
-            {
-                name: 'Login',
-                url: '/login',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Register',
-                url: '/register',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Error 404',
-                url: '/404',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Error 500',
-                url: '/500',
-                icon: 'icon-star'
-            }
-        ]
-    },
-    {
-        name: 'Disabled',
-        url: '/dashboard',
-        icon: 'icon-ban',
-        badge: {
-            variant: 'secondary',
-            text: 'NEW'
-        },
-        attributes: { disabled: true },
-    }
-];
-
 
 /***/ }),
 
@@ -800,17 +575,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./containers */ "./src/app/containers/index.ts");
-/* harmony import */ var _services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/authguard.guard */ "./src/app/services/authguard.guard.ts");
-/* harmony import */ var _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/error/404.component */ "./src/app/views/error/404.component.ts");
-/* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
-/* harmony import */ var _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/game-request/game-request.component */ "./src/app/views/game-request/game-request.component.ts");
-/* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
-/* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
+/* harmony import */ var _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/error/404.component */ "./src/app/views/error/404.component.ts");
+/* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
+/* harmony import */ var _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/game-request/game-request.component */ "./src/app/views/game-request/game-request.component.ts");
+/* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
+/* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
 
 
 
 // Import Containers
-
 
 
 
@@ -825,35 +598,35 @@ var routes = [
     },
     {
         path: '404',
-        component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__["P404Component"],
+        component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__["P404Component"],
         data: {
             title: 'Page 404'
         }
     },
     {
         path: '500',
-        component: _views_error_500_component__WEBPACK_IMPORTED_MODULE_6__["P500Component"],
+        component: _views_error_500_component__WEBPACK_IMPORTED_MODULE_5__["P500Component"],
         data: {
             title: 'Page 500'
         }
     },
     {
         path: 'login',
-        component: _views_login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
+        component: _views_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
         data: {
             title: 'Login Page'
         }
     },
     {
         path: 'register',
-        component: _views_register_register_component__WEBPACK_IMPORTED_MODULE_9__["RegisterComponent"],
+        component: _views_register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"],
         data: {
             title: 'Register Page'
         }
     },
     {
         path: 'requests',
-        component: _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_7__["GameRequestComponent"],
+        component: _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_6__["GameRequestComponent"],
         data: {
             title: 'Request Page'
         }
@@ -866,37 +639,12 @@ var routes = [
         },
         children: [
             {
-                path: 'base',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-base-base-module */ "views-base-base-module").then(__webpack_require__.bind(null, /*! ./views/base/base.module */ "./src/app/views/base/base.module.ts")).then(function (m) { return m.BaseModule; }); }
-            },
-            {
-                path: 'charts',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-chartjs-chartjs-module */ "views-chartjs-chartjs-module").then(__webpack_require__.bind(null, /*! ./views/chartjs/chartjs.module */ "./src/app/views/chartjs/chartjs.module.ts")).then(function (m) { return m.ChartJSModule; }); }
-            },
-            {
                 path: 'dashboard',
-                loadChildren: function () { return Promise.all(/*! import() | views-dashboard-dashboard-module */[__webpack_require__.e("default~views-dashboard-dashboard-module~views-theme-theme-module~views-widgets-widgets-module"), __webpack_require__.e("common"), __webpack_require__.e("views-dashboard-dashboard-module")]).then(__webpack_require__.bind(null, /*! ./views/dashboard/dashboard.module */ "./src/app/views/dashboard/dashboard.module.ts")).then(function (m) { return m.DashboardModule; }); },
-                canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
+                loadChildren: function () { return __webpack_require__.e(/*! import() | views-dashboard-dashboard-module */ "views-dashboard-dashboard-module").then(__webpack_require__.bind(null, /*! ./views/dashboard/dashboard.module */ "./src/app/views/dashboard/dashboard.module.ts")).then(function (m) { return m.DashboardModule; }); },
             },
-            {
-                path: 'icons',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-icons-icons-module */ "views-icons-icons-module").then(__webpack_require__.bind(null, /*! ./views/icons/icons.module */ "./src/app/views/icons/icons.module.ts")).then(function (m) { return m.IconsModule; }); }
-            },
-            {
-                path: 'notifications',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-notifications-notifications-module */ "views-notifications-notifications-module").then(__webpack_require__.bind(null, /*! ./views/notifications/notifications.module */ "./src/app/views/notifications/notifications.module.ts")).then(function (m) { return m.NotificationsModule; }); }
-            },
-            {
-                path: 'theme',
-                loadChildren: function () { return Promise.all(/*! import() | views-theme-theme-module */[__webpack_require__.e("default~views-dashboard-dashboard-module~views-theme-theme-module~views-widgets-widgets-module"), __webpack_require__.e("views-theme-theme-module")]).then(__webpack_require__.bind(null, /*! ./views/theme/theme.module */ "./src/app/views/theme/theme.module.ts")).then(function (m) { return m.ThemeModule; }); }
-            },
-            {
-                path: 'widgets',
-                loadChildren: function () { return Promise.all(/*! import() | views-widgets-widgets-module */[__webpack_require__.e("default~views-dashboard-dashboard-module~views-theme-theme-module~views-widgets-widgets-module"), __webpack_require__.e("common"), __webpack_require__.e("views-widgets-widgets-module")]).then(__webpack_require__.bind(null, /*! ./views/widgets/widgets.module */ "./src/app/views/widgets/widgets.module.ts")).then(function (m) { return m.WidgetsModule; }); }
-            }
         ]
     },
-    { path: '**', component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__["P404Component"] }
+    { path: '**', component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__["P404Component"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -926,14 +674,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DefaultLayoutComponent", function() { return DefaultLayoutComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../_nav */ "./src/app/_nav.ts");
-
 
 
 var DefaultLayoutComponent = /** @class */ (function () {
     function DefaultLayoutComponent() {
         this.sidebarMinimized = false;
-        this.navItems = _nav__WEBPACK_IMPORTED_MODULE_2__["navItems"];
     }
     DefaultLayoutComponent.prototype.toggleMinimize = function (e) {
         this.sidebarMinimized = e;
@@ -980,57 +725,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _default_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./default-layout */ "./src/app/containers/default-layout/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DefaultLayoutComponent", function() { return _default_layout__WEBPACK_IMPORTED_MODULE_0__["DefaultLayoutComponent"]; });
 
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/authguard.guard.ts":
-/*!*********************************************!*\
-  !*** ./src/app/services/authguard.guard.ts ***!
-  \*********************************************/
-/*! exports provided: AuthguardGuard */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthguardGuard", function() { return AuthguardGuard; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _dataservice_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dataservice.service */ "./src/app/services/dataservice.service.ts");
-
-
-
-
-var AuthguardGuard = /** @class */ (function () {
-    function AuthguardGuard(dataService, router) {
-        this.dataService = dataService;
-        this.router = router;
-    }
-    AuthguardGuard.prototype.canActivate = function (route, state) {
-        var routeurl = state.url;
-        return this.isLogin(routeurl);
-    };
-    AuthguardGuard.prototype.isLogin = function (routeurl) {
-        if (this.dataService.isLoggedIn()) {
-            return true;
-        }
-        this.dataService.redirectUrl = routeurl;
-        this.router.navigate(['/login'], { queryParams: { returnUrl: routeurl } });
-    };
-    AuthguardGuard.ctorParameters = function () { return [
-        { type: _dataservice_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
-    ]; };
-    AuthguardGuard = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_dataservice_service__WEBPACK_IMPORTED_MODULE_3__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
-    ], AuthguardGuard);
-    return AuthguardGuard;
-}());
 
 
 
