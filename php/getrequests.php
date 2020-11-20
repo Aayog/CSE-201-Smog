@@ -3,7 +3,7 @@
 
 include_once("config.php");
 
-$sql = "SELECT * FROM UserRequests";
+$sql = "SELECT * FROM UserRequests WHERE approved=FALSE";
 $requests = [];
 
 if($result = mysqli_query($conn,$sql))
@@ -15,6 +15,7 @@ if($result = mysqli_query($conn,$sql))
     $requests[$cr]['Descript'] = $row['gDescript'];
     $requests[$cr]['Username'] = $row['userName'];
     $requests[$cr]['Id'] = $row['reqID'];
+    $requests[$cr]['Approved'] = $row['approved'];
     $cr++;
   }
   
