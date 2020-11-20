@@ -53,4 +53,11 @@ php -S localhost:8000 &
 cd ..
 cd Smog
 yes | npm install --save-dev @angular-devkit/build-angular
-ng serve --sourcemap=false&
+ng update
+ng serve &
+if [ "$OS" = "mac" ]
+then
+    open http://localhost:4200
+else
+    gnome-open http://localhost:4200
+fi

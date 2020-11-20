@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetrequestsService } from '../../services/getrequests.service';
 import { Request } from '../../models/Request';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-review-requests',
@@ -11,7 +12,7 @@ export class ReviewRequestsComponent implements OnInit {
   requests: Request[];
   error: string;
 
-  constructor(private getrequestService: GetrequestsService) { }
+  constructor(private getrequestService: GetrequestsService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllRequests();

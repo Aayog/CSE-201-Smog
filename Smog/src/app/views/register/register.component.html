@@ -32,7 +32,7 @@
                   </div>
                   <input type="password" class="form-control" formControlName="password_repeat" placeholder="Repeat password" autocomplete="new-password" required>
                 </div>
-                <button type="submit" class="btn btn-block btn-success">Create Account</button>
+                <button type="submit" class="btn btn-block btn-success" [disabled]="!angForm.valid"> Create Account</button>
               </form>
             </div>
             <div class="card-footer p-4">

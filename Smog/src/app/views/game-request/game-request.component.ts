@@ -17,7 +17,7 @@ export class GameRequestComponent implements OnInit {
  
     this.angForm = this.fb.group({
       title: ['', [Validators.required,Validators.minLength(1)]],
-      desc: ['', [Validators.required,Validators.minLength(1), Validators.maxLength(500)]],
+      desc: ['', [Validators.required,Validators.minLength(2), Validators.maxLength(500)]],
     });
    }
  
@@ -31,7 +31,7 @@ export class GameRequestComponent implements OnInit {
               this.router.navigate(['dashboard']);
           },
           error => {
-            alert("Try a different game")
+            alert("Make the description a bit shorter")
           });
   }
   get title() { return this.angForm.get('title'); }
