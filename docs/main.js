@@ -311,7 +311,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header\n  [navbarBrandRouterLink]=\"['/dashboard']\"\n  [fixed]=\"true\"\n  [navbarBrandFull]=\"{src: 'assets/nozzleGuy.jpg', width: 89, height: 25, alt: 'Nozzle Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/nozzleGuy.jpg', width: 30, height: 30, alt: 'Nozzle Logo'}\"\n>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/requests']\"><i class=\"icon-plus\"></i> &nbsp;Add Request</a>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <!-- Main content -->\n  <main class=\"main\">\n\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div><!-- /.container-fluid -->\n  </main>\n</div>\n<app-footer>\n  <span><a href=\"https://coreui.io\">CoreUI</a> &copy; 2018 creativeLabs.</span>\n  <span class=\"ml-auto\">Powered by <a href=\"https://coreui.io/angular\">CoreUI for Angular</a></span>\n</app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header\n  [navbarBrandRouterLink]=\"['/dashboard']\"\n  [fixed]=\"true\"\n  [navbarBrandFull]=\"{src: 'assets/nozzleGuy.jpg', width: 89, height: 25, alt: 'Nozzle Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/nozzleGuy.jpg', width: 30, height: 30, alt: 'Nozzle Logo'}\"\n>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <span *ngIf=\"usertype == 'Administrator'\">\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/review']\"><i class=\"icon-envelope-letter\"></i> &nbsp;Review Request</a>\n    </li>\n  </span>\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/requests']\"><i class=\"icon-plus\"></i> &nbsp;Add Request</a>\n    </li>\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/login']\"><i class=\"icon-logout\"></i> &nbsp;Logout</a>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <!-- Main content -->\n  <main class=\"main\">\n\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div>\n  </main>\n</div>\n<app-footer>\n  <span><a href=\"https://coreui.io\">CoreUI</a> &copy; 2018 creativeLabs.</span>\n  <span class=\"ml-auto\">Powered by <a href=\"https://coreui.io/angular\">CoreUI for Angular</a></span>\n</app-footer>\n");
 
 /***/ }),
 
@@ -377,6 +377,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-body\">\n  <main class=\"main d-flex align-items-center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-6 mx-auto\">\n          <div class=\"card mx-4\">\n            <div class=\"card-body p-4\">\n              <form [formGroup]=\"angForm\" (ngSubmit)=\"postdata(angForm)\" autocomplete=\"off\">\n                <h1>Register</h1>\n                <p class=\"text-muted\">Create your account</p>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-user\"></i></span>\n                  </div>\n                  <input type=\"text\" formControlName=\"username\" class=\"form-control\" placeholder=\"Username\" autocomplete=\"username\" required>\n                </div>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\">@</span>\n                  </div>\n                  <input type=\"text\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email\" autocomplete=\"email\" required>\n                </div>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                  </div>\n                  <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" autocomplete=\"new-password\" required>\n                </div>\n                <div class=\"input-group mb-4\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                  </div>\n                  <input type=\"password\" class=\"form-control\" formControlName=\"password_repeat\" placeholder=\"Repeat password\" autocomplete=\"new-password\" required>\n                </div>\n                <button type=\"submit\" class=\"btn btn-block btn-success\">Create Account</button>\n              </form>\n            </div>\n            <div class=\"card-footer p-4\">\n              <div class=\"row\">\n                <div class=\"col-6\">\n                  <button class=\"btn btn-block btn-facebook\" type=\"button\"><span>facebook</span></button>\n                </div>\n                <div class=\"col-6\">\n                  <button class=\"btn btn-block btn-twitter\" type=\"button\"><span>twitter</span></button>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/review-requests/review-requests.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/review-requests/review-requests.component.html ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div *ngFor=\"let request of requests\" class=\"col-lg-3 d-flex align-items-stretch\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">{{request.Title}}</h5>\n                    <p class=\"card-text\">{{request.Descript}}</p>\n                </div>\n                <div class=\"card-footer\">\n                    <button type=\"submit\" (click)=\"requestApprove(request.Id)\" class=\"btn btn-block btn-success\">Request Accepted</button>\n                    <button type=\"submit\" (click)=\"requestDeny(request.Id)\" class=\"btn btn-block btn-danger\">Denied</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -487,6 +500,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/game-request/game-request.component */ "./src/app/views/game-request/game-request.component.ts");
+/* harmony import */ var _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./views/review-requests/review-requests.component */ "./src/app/views/review-requests/review-requests.component.ts");
 
 
 
@@ -510,6 +524,7 @@ var APP_CONTAINERS = [
 // Import routing module
 
 // Import 3rd party components
+
 
 
 
@@ -545,6 +560,7 @@ var AppModule = /** @class */ (function () {
                 _views_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
                 _views_register_register_component__WEBPACK_IMPORTED_MODULE_11__["RegisterComponent"],
                 _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_19__["GameRequestComponent"],
+                _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_20__["ReviewRequestsComponent"],
             ]),
             providers: [{
                     provide: _angular_common__WEBPACK_IMPORTED_MODULE_3__["LocationStrategy"],
@@ -575,15 +591,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./containers */ "./src/app/containers/index.ts");
-/* harmony import */ var _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/error/404.component */ "./src/app/views/error/404.component.ts");
-/* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
-/* harmony import */ var _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/game-request/game-request.component */ "./src/app/views/game-request/game-request.component.ts");
-/* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
-/* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
+/* harmony import */ var _services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/authguard.guard */ "./src/app/services/authguard.guard.ts");
+/* harmony import */ var _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/error/404.component */ "./src/app/views/error/404.component.ts");
+/* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
+/* harmony import */ var _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/game-request/game-request.component */ "./src/app/views/game-request/game-request.component.ts");
+/* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
+/* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
+/* harmony import */ var _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/review-requests/review-requests.component */ "./src/app/views/review-requests/review-requests.component.ts");
 
 
 
 // Import Containers
+
+
 
 
 
@@ -598,38 +618,47 @@ var routes = [
     },
     {
         path: '404',
-        component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__["P404Component"],
+        component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__["P404Component"],
         data: {
             title: 'Page 404'
         }
     },
     {
         path: '500',
-        component: _views_error_500_component__WEBPACK_IMPORTED_MODULE_5__["P500Component"],
+        component: _views_error_500_component__WEBPACK_IMPORTED_MODULE_6__["P500Component"],
         data: {
             title: 'Page 500'
         }
     },
     {
         path: 'login',
-        component: _views_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
+        component: _views_login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
         data: {
             title: 'Login Page'
         }
     },
     {
         path: 'register',
-        component: _views_register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"],
+        component: _views_register_register_component__WEBPACK_IMPORTED_MODULE_9__["RegisterComponent"],
         data: {
             title: 'Register Page'
         }
     },
     {
         path: 'requests',
-        component: _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_6__["GameRequestComponent"],
+        component: _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_7__["GameRequestComponent"],
         data: {
             title: 'Request Page'
-        }
+        },
+        canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
+    },
+    {
+        path: 'review',
+        component: _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_10__["ReviewRequestsComponent"],
+        data: {
+            title: 'Review requests Page'
+        },
+        canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
     },
     {
         path: '',
@@ -641,10 +670,11 @@ var routes = [
             {
                 path: 'dashboard',
                 loadChildren: function () { return __webpack_require__.e(/*! import() | views-dashboard-dashboard-module */ "views-dashboard-dashboard-module").then(__webpack_require__.bind(null, /*! ./views/dashboard/dashboard.module */ "./src/app/views/dashboard/dashboard.module.ts")).then(function (m) { return m.DashboardModule; }); },
+                canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
             },
         ]
     },
-    { path: '**', component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_4__["P404Component"] }
+    { path: '**', component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__["P404Component"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -674,20 +704,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DefaultLayoutComponent", function() { return DefaultLayoutComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/dataservice.service */ "./src/app/services/dataservice.service.ts");
+
 
 
 var DefaultLayoutComponent = /** @class */ (function () {
-    function DefaultLayoutComponent() {
-        this.sidebarMinimized = false;
+    function DefaultLayoutComponent(dataservice) {
+        this.dataservice = dataservice;
     }
-    DefaultLayoutComponent.prototype.toggleMinimize = function (e) {
-        this.sidebarMinimized = e;
+    DefaultLayoutComponent.prototype.ngOnInit = function () {
+        this.usertype = this.dataservice.getAdmin();
     };
+    DefaultLayoutComponent.ctorParameters = function () { return [
+        { type: _services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] }
+    ]; };
     DefaultLayoutComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-dashboard',
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./default-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/containers/default-layout/default-layout.component.html")).default
-        })
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]])
     ], DefaultLayoutComponent);
     return DefaultLayoutComponent;
 }());
@@ -730,6 +766,57 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/app/services/authguard.guard.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/authguard.guard.ts ***!
+  \*********************************************/
+/*! exports provided: AuthguardGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthguardGuard", function() { return AuthguardGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _dataservice_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dataservice.service */ "./src/app/services/dataservice.service.ts");
+
+
+
+
+var AuthguardGuard = /** @class */ (function () {
+    function AuthguardGuard(dataService, router) {
+        this.dataService = dataService;
+        this.router = router;
+    }
+    AuthguardGuard.prototype.canActivate = function (route, state) {
+        var routeurl = state.url;
+        return this.isLogin(routeurl);
+    };
+    AuthguardGuard.prototype.isLogin = function (routeurl) {
+        if (this.dataService.isLoggedIn()) {
+            return true;
+        }
+        this.dataService.redirectUrl = routeurl;
+        this.router.navigate(['/login'], { queryParams: { returnUrl: routeurl } });
+    };
+    AuthguardGuard.ctorParameters = function () { return [
+        { type: _dataservice_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    ]; };
+    AuthguardGuard = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_dataservice_service__WEBPACK_IMPORTED_MODULE_3__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], AuthguardGuard);
+    return AuthguardGuard;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/dataservice.service.ts":
 /*!*************************************************!*\
   !*** ./src/app/services/dataservice.service.ts ***!
@@ -752,13 +839,15 @@ var DataService = /** @class */ (function () {
     function DataService(httpClient) {
         this.httpClient = httpClient;
         this.baseUrl = "https://34.204.91.132/api/";
+        // baseUrl:string = "http://localhost:8000/";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     DataService.prototype.userlogin = function (userName, Password) {
         var _this = this;
-        return this.httpClient.post(this.baseUrl + '/login.php', { userName: userName, Password: Password })
+        return this.httpClient.post(this.baseUrl + 'login.php', { userName: userName, Password: Password })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (User) {
             _this.setToken(User[0].userName);
+            _this.setAdmin(User[0].Admin);
             _this.getLoggedInName.emit(true);
             return User;
         }));
@@ -778,6 +867,15 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.deleteToken = function () {
         localStorage.removeItem('token');
+    };
+    DataService.prototype.setAdmin = function (usertype) {
+        localStorage.setItem('usertype', usertype);
+    };
+    DataService.prototype.getAdmin = function () {
+        return localStorage.getItem('usertype');
+    };
+    DataService.prototype.deleteAdmin = function () {
+        localStorage.removeItem('usertype');
     };
     DataService.prototype.isLoggedIn = function () {
         var usertoken = this.getToken();
@@ -800,6 +898,64 @@ var DataService = /** @class */ (function () {
         Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
     ], DataService);
     return DataService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/getrequests.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/getrequests.service.ts ***!
+  \*************************************************/
+/*! exports provided: GetrequestsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetrequestsService", function() { return GetrequestsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/internal/operators/map */ "./node_modules/rxjs/internal/operators/map.js");
+/* harmony import */ var rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+// Filter games https://stackoverflow.com/questions/40678206/angular-2-filter-search-list
+var GetrequestsService = /** @class */ (function () {
+    function GetrequestsService(httpClient) {
+        this.httpClient = httpClient;
+        this.baseUrl = "https://34.204.91.132/api/";
+    }
+    GetrequestsService.prototype.getAllRequests = function () {
+        var _this = this;
+        return this.httpClient.get(this.baseUrl + 'getrequests.php').pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            _this.requests = res['data'];
+            return _this.requests;
+        }));
+    };
+    GetrequestsService.prototype.deleteRequest = function (Id) {
+        var body = JSON.stringify(Id);
+        this.httpClient.post(this.baseUrl + 'deleterequest.php', body)
+            .subscribe(function (msg) { return console.log(msg); });
+    };
+    GetrequestsService.prototype.approveRequest = function (Id) {
+        var body = JSON.stringify(Id.trim());
+        this.httpClient.post(this.baseUrl + 'approverequest.php', body)
+            .subscribe(function (msg) { return console.log(msg); });
+    };
+    GetrequestsService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    ]; };
+    GetrequestsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], GetrequestsService);
+    return GetrequestsService;
 }());
 
 
@@ -1153,6 +1309,78 @@ var RegisterComponent = /** @class */ (function () {
         Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _services_dataservice_service__WEBPACK_IMPORTED_MODULE_5__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], RegisterComponent);
     return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/review-requests/review-requests.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/views/review-requests/review-requests.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3Jldmlldy1yZXF1ZXN0cy9yZXZpZXctcmVxdWVzdHMuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/views/review-requests/review-requests.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/views/review-requests/review-requests.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ReviewRequestsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewRequestsComponent", function() { return ReviewRequestsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_getrequests_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/getrequests.service */ "./src/app/services/getrequests.service.ts");
+
+
+
+var ReviewRequestsComponent = /** @class */ (function () {
+    function ReviewRequestsComponent(getrequestService) {
+        this.getrequestService = getrequestService;
+    }
+    ReviewRequestsComponent.prototype.ngOnInit = function () {
+        this.getAllRequests();
+    };
+    ReviewRequestsComponent.prototype.getAllRequests = function () {
+        var _this = this;
+        this.getrequestService.getAllRequests().subscribe(function (res) {
+            _this.requests = res;
+        }, function (err) {
+            _this.error = err;
+        });
+    };
+    ReviewRequestsComponent.prototype.requestDeny = function (id) {
+        console.log("hmm..");
+        this.getrequestService.deleteRequest(id);
+        this.getAllRequests();
+    };
+    ReviewRequestsComponent.prototype.requestApprove = function (id) {
+        console.log("approving..");
+        this.getrequestService.approveRequest(id);
+        this.getAllRequests();
+    };
+    ReviewRequestsComponent.ctorParameters = function () { return [
+        { type: _services_getrequests_service__WEBPACK_IMPORTED_MODULE_2__["GetrequestsService"] }
+    ]; };
+    ReviewRequestsComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-review-requests',
+            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./review-requests.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/review-requests/review-requests.component.html")).default,
+            styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./review-requests.component.css */ "./src/app/views/review-requests/review-requests.component.css")).default]
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_services_getrequests_service__WEBPACK_IMPORTED_MODULE_2__["GetrequestsService"]])
+    ], ReviewRequestsComponent);
+    return ReviewRequestsComponent;
 }());
 
 

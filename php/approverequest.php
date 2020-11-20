@@ -5,11 +5,8 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata))
 {   
-  //$id = mysqli_real_escape_string($conn, trim($request->id));
-
-  $sql = "UPDATE SET approved=TRUE FROM UserRequests WHERE reqId='".$request."'";
-  
-  echo $sql;
+  $id = mysqli_real_escape_string($conn, trim($request));
+  $sql = "UPDATE UserRequests SET approved=TRUE WHERE reqId='".$id."'";
   $conn->query($sql);
 }
 else
@@ -17,7 +14,3 @@ else
     http_response_code(400);
 }
 ?>
-
-
-
-

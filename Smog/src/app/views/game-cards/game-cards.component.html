@@ -1,14 +1,16 @@
-<input type="text" [(ngModel)]="queryString" id="search" placeholder="Search any game" class="form-control">
-<div class="row">
-<div *ngFor="let game of games | GameFilterPipe: queryString" class="col-lg-3 d-flex align-items-stretch">
-        <div class="card" style="width: 18rem;">
-            <img [src] ="game.Img" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">{{game.Title}}</h5>
-            <p class="card-text">{{game.Descript}}</p>
-            <h1>Comments: </h1>
-            <a [href]="game.Link" class="align-self-end btn btn-primary">See more..</a>
+<div class="container-fluid">
+    <input type="text" [(ngModel)]="queryString" id="search" aria-label="Search" placeholder="Search any game" class="form-control">
+    <div class="row">
+        <div *ngFor="let game of games | GameFilterPipe: queryString" class="col-lg-3 d-flex align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <img [src]="game.Img" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{game.Title}}</h5>
+                    <p class="card-text">{{game.Descript}}</p>
+                    <h1>Comments: </h1>
+                    <a [href]="game.Link" class="align-self-end btn btn-primary">See more..</a>
+                </div>
+            </div>
         </div>
-</div>
-</div>
+    </div>
 </div>

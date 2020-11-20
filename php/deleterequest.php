@@ -5,9 +5,8 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata))
 {   
-  //$id = mysqli_real_escape_string($conn, trim($request->id));
-  $sql = "DELETE FROM UserRequests WHERE reqId='".$request."'";
-  echo $sql;
+  $id = mysqli_real_escape_string($conn, trim($request));
+  $sql = "DELETE FROM UserRequests WHERE reqId='".$id."'";
   $conn->query($sql);
 }
 else
