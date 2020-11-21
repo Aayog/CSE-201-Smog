@@ -10,8 +10,6 @@ export class GameFilterPipe implements PipeTransform {
         if (input) {
             input = input.toLowerCase();
             return value.filter(function (el: any) {
-                console.log(el['Title']);
-                return el['Title'].toLowerCase().includes(input);
             })
         }
         return value;

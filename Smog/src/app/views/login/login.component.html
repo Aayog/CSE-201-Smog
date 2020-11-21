@@ -29,9 +29,10 @@
                     <input type="password" class="form-control" formControlName="password" placeholder="Password" autocomplete="current-password" required>
                   </div>
                   <div class="row">
-                    <div class="col-6">
+                    <div class="col-sm-6">
                       <!--  [disabled]="!angForm.valid" -->
                       <button type="submit" class="btn btn-primary px-4">Login</button>
+                      <button type="button" [routerLink]="['/register']" class="btn btn-light d-lg-none">Register Here</button>
                     </div>
                     <!-- <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0">Forgot password?</button>
