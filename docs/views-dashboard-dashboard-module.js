@@ -178,7 +178,6 @@ var CommentComponent = /** @class */ (function () {
         var _this = this;
         this.commentService.getAllComments(this.title).subscribe(function (res) {
             _this.comments = res;
-            console.log(res);
         }, function (err) {
             _this.error = err;
         });
@@ -421,8 +420,6 @@ var GameFilterPipe = /** @class */ (function () {
         if (input) {
             input = input.toLowerCase();
             return value.filter(function (el) {
-                console.log(el['Title']);
-                return el['Title'].toLowerCase().includes(input);
             });
         }
         return value;

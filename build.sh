@@ -8,11 +8,11 @@ then
     x=1 
     while [ $x -eq 1 ]
     do
-        echo -e "Select Operating system [mac|ubuntu]"
+        echo -e "Select Operating system [mac|linux]"
         read OS
         if [ "$OS" = "mac" ]
         then
-            /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+            ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
             brew update
             brew doctor
             export PATH="/usr/local/bin:$PATH"
@@ -23,7 +23,7 @@ then
             then
                 x=1
             fi
-        elif [ "$OS" = "ubuntu" ]
+        elif [ "$OS" = "linux" ]
         then
             sudo apt update
             sudo apt install nodejs npm

@@ -22,7 +22,6 @@ export class CommentComponent implements OnInit {
     this.commentService.getAllComments(this.title).subscribe(
       (res: Comment[]) => {
           this.comments = res;
-          console.log(res);
       },
       (err) => {
         this.error = err;

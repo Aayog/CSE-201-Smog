@@ -40,10 +40,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
       $count = $count + 1;
     }
     if($count==1){
-      echo " Login Passed";
+      echo " Login Passed<br>";
     }else
   {
-   echo " Login Failed"; 
+   echo " Login Failed<br>"; 
   }
 }
 
@@ -70,9 +70,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 	    'Email' => $Testmail,
       'Id'    => mysqli_insert_id($conn)
     ];
-    echo " Insertion Passed";
+    echo " Insertion Passed<br>";
   }else{
-     echo " Insertion Failed";
+     echo " Insertion Failed<br>";
   }
 }
     
@@ -102,12 +102,12 @@ if($result = mysqli_query($conn,$sqlUserTest))
       $rows[] = $row;
     }
   if(count($rows)>=1){
-     echo " Sign Up Passed";
+     echo " Sign Up Passed<br>";
   }else{
-     echo " Sign Up Failed";
+     echo " Sign Up Failed<br>";
   }
 }else{
-echo " Sign Up Failed";
+echo " Sign Up Failed<br>";
 }
 
 //test that the default Admin value is User
@@ -122,12 +122,12 @@ if($result2 = mysqli_query($conn,$sqldefaultTest))
       $rows2[] = $row2;
     }
     if(count($rows2)>=0){
-      echo " Admin Default Test Passed";
+      echo " Admin Default Test Passed<br>";
     }else{
-      echo " Admin Default Test Failed";
+      echo " Admin Default Test Failed<br>";
     }
 }else{
-echo " Admin Default Test Failed";
+echo " Admin Default Test Failed<br>";
 }
 }
 
@@ -143,9 +143,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     //remove value from database so it can be used for next test and test deletion
 $sqlDelete = "Delete FROM User WHERE userName='Test'";
 if($conn->query($sqlDelete)===TRUE){
- echo " Deletion Passed";
+ echo " Deletion Passed<br>";
 } else {
- echo " Deletion Failed"; 
+ echo " Deletion Failed<br>"; 
 }
 }
 
@@ -165,9 +165,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
   $Email2 = "test@gmail.com";
   $sql = "INSERT INTO User(userName,Password,Email) VALUES ('".$userName2."','".$Password2."','".$Email2."')";
   if ($conn->query($sql) === FALSE) {
-	echo " NoDuplicates Passed"; 
+	echo " NoDuplicates Passed<br>"; 
   }else{
-      echo " NoDuplicates Failed";
+      echo " NoDuplicates Failed<br>";
   }
 }
 
@@ -177,7 +177,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 //run tests
 if(connectionTest()=== TRUE){
-echo "Connection Passed";
+echo "Connection Passed<br>";
 loginTest();
 insertionTest();
 signupTest();
@@ -187,8 +187,10 @@ duplicateTest();
 
 
 }else{
-echo "Connection Failed";
+echo "Connection Failed<br>";
 }
 
 $conn ->close();
+
+include('php_test.php');
 ?>
