@@ -10,14 +10,16 @@ export class DataService {
   redirectUrl: string;
  
   baseUrl:string = "https://34.204.91.132/api/";
+  // baseUrl:string = "http://localhost:8000/";
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 constructor(private httpClient : HttpClient) { }
 
 public userlogin(userName, Password) {
-  return this.httpClient.post<any>(this.baseUrl + '/login.php', { userName, Password })
+  return this.httpClient.post<any>(this.baseUrl + 'login.php', { userName, Password })
       .pipe(map(User => {
           this.setToken(User[0].userName);
+          this.setAdmin(User[0].Admin);
           this.getLoggedInName.emit(true);
           return User;
           }
@@ -35,7 +37,6 @@ public userregistration(userName, Password, Email) {
 setToken(token: string) {
   localStorage.setItem('token', token);
 }
- 
 getToken() {
   return localStorage.getItem('token');
 }
@@ -43,6 +44,20 @@ getToken() {
 deleteToken() {
   localStorage.removeItem('token');
 }
+
+
+
+setAdmin(usertype: string){
+  localStorage.setItem('usertype', usertype);
+}
+getAdmin() {
+  return localStorage.getItem('usertype');
+}
+ 
+deleteAdmin() {
+  localStorage.removeItem('usertype');
+}
+
  
 isLoggedIn() {
   const usertoken = this.getToken();

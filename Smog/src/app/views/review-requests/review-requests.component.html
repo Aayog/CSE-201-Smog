@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let request of requests" class="col-lg-3 d-flex align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{request.Title}}</h5>
+                    <p class="card-text">{{request.Descript}}</p>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" (click)="requestApprove(request.Id)" class="btn btn-block btn-success">Request Accepted</button>
+                    <button type="submit" (click)="requestDeny(request.Id)" class="btn btn-block btn-danger">Denied</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button [routerLink]="['/dashboard']" class="btn bnt-block btn-dark">Go back</button>
+    </div>
+</div>

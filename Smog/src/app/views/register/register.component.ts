@@ -14,11 +14,12 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder,private dataService: DataService,private router:Router) {
  
     this.angForm = this.fb.group({
-      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-      password: ['', Validators.required],
-      username: ['', Validators.required],
-      password_repeat: ['', Validators.required],
-    });
+      email: ['', [Validators.required,Validators.minLength(5), Validators.email]],
+      password: ['', Validators.required, Validators.minLength(5)],
+      username: ['', Validators.required, Validators.minLength(5)],
+      password_repeat: ['', [Validators.required, Validators.minLength(5)]],
+    }
+    );
    }
  
   ngOnInit() {

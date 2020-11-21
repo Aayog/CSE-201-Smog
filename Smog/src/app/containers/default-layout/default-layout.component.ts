@@ -1,12 +1,15 @@
 import {Component} from '@angular/core';
+import { DataService } from '../../services/dataservice.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './default-layout.component.html'
 })
 export class DefaultLayoutComponent {
-  public sidebarMinimized = false;
+  usertype: string;
+  constructor(private dataservice: DataService) {
+  }
 
-  toggleMinimize(e) {
-    this.sidebarMinimized = e;
+  ngOnInit(): void {
+    this.usertype = this.dataservice.getAdmin();
   }
 }

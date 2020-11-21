@@ -10,6 +10,7 @@ import { P500Component } from './views/error/500.component';
 import { GameRequestComponent } from './views/game-request/game-request.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { ReviewRequestsComponent } from './views/review-requests/review-requests.component';
 
 export const routes: Routes = [
   {
@@ -50,7 +51,16 @@ export const routes: Routes = [
     component: GameRequestComponent,
     data: {
       title: 'Request Page'
-    }
+    },
+    canActivate: [AuthguardGuard]
+  },
+  {
+    path: 'review',
+    component: ReviewRequestsComponent,
+    data: {
+      title: 'Review requests Page'
+    },
+    canActivate: [AuthguardGuard]
   },
   {
     path: '',
@@ -62,7 +72,7 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
-        //canActivate: [AuthguardGuard]
+        canActivate: [AuthguardGuard]
       },
     ]
   },

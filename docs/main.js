@@ -311,7 +311,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header\n  [navbarBrandRouterLink]=\"['/dashboard']\"\n  [fixed]=\"true\"\n  [navbarBrandFull]=\"{src: 'assets/nozzleGuy.jpg', width: 89, height: 25, alt: 'Nozzle Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/nozzleGuy.jpg', width: 30, height: 30, alt: 'Nozzle Logo'}\"\n  [sidebarToggler]=\"'lg'\"\n  [asideMenuToggler]=\"'lg'\">\n  <ul class=\"nav navbar-nav d-md-down-none\">\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Dashboard</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Users</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Settings</a>\n    </li>\n  </ul>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/requests']\"><i class=\"icon-plus\"></i> &nbsp;Add Request</a>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <app-sidebar #appSidebar [fixed]=\"true\" [display]=\"'lg'\" [minimized]=\"sidebarMinimized\" (minimizedChange)=\"toggleMinimize($event)\">\n    <app-sidebar-nav [navItems]=\"navItems\" [perfectScrollbar] [disabled]=\"appSidebar.minimized\"></app-sidebar-nav>\n    <app-sidebar-minimizer></app-sidebar-minimizer>\n  </app-sidebar>\n  <!-- Main content -->\n  <main class=\"main\">\n    <!-- Breadcrumb -->\n    <!-- breaking change 'cui-breadcrumb' -->\n    <cui-breadcrumb>\n      <!-- Breadcrumb Menu-->\n      <li class=\"breadcrumb-menu d-md-down-none\">\n        <div class=\"btn-group\" role=\"group\" aria-label=\"Button group with nested dropdown\">\n          <a class=\"btn\" href=\"#\"><i class=\"icon-speech\"></i></a>\n          <a class=\"btn\" [routerLink]=\"['/dashboard']\"><i class=\"icon-graph\"></i> &nbsp;Dashboard</a>\n          <a class=\"btn\" href=\"#\"><i class=\"icon-settings\"></i> &nbsp;Settings</a>\n        </div>\n      </li>\n    </cui-breadcrumb>\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div><!-- /.container-fluid -->\n  </main>\n</div>\n<app-footer>\n  <span><a href=\"https://coreui.io\">CoreUI</a> &copy; 2018 creativeLabs.</span>\n  <span class=\"ml-auto\">Powered by <a href=\"https://coreui.io/angular\">CoreUI for Angular</a></span>\n</app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header\n  [navbarBrandRouterLink]=\"['/dashboard']\"\n  [fixed]=\"true\"\n  [navbarBrandFull]=\"{src: 'assets/nozzleGuy.jpg', width: 89, height: 25, alt: 'Nozzle Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/nozzleGuy.jpg', width: 30, height: 30, alt: 'Nozzle Logo'}\"\n>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <span *ngIf=\"usertype == 'Administrator'\">\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/review']\"><i class=\"icon-envelope-letter\"></i> &nbsp;Review Request</a>\n    </li>\n  </span>\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/requests']\"><i class=\"icon-plus\"></i> &nbsp;Add Request</a>\n    </li>\n    <li>\n      <a class=\"btn\" [routerLink]=\"['/login']\"><i class=\"icon-logout\"></i> &nbsp;Logout</a>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <!-- Main content -->\n  <main class=\"main\">\n\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div>\n  </main>\n</div>\n<app-footer>\n  <span><a href=\"https://coreui.io\">CoreUI</a> &copy; 2018 creativeLabs.</span>\n  <span class=\"ml-auto\">Powered by <a href=\"https://coreui.io/angular\">CoreUI for Angular</a></span>\n</app-footer>\n");
 
 /***/ }),
 
@@ -350,7 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n    <form [formGroup]=\"angForm\" (ngSubmit)=\"gamerequest(angForm)\" autocomplete=\"off\">\n        <div class=\"card-header\">\n            <h1>Request to add a game</h1>\n        </div>\n        <div class=\"card-body\">\n            <div class=\"input-group mb-3\">\n                <div class=\"input-group-prepend\">\n                  <span class=\"input-group-text\"><i class=\"icon-game-controller\"></i></span>\n                </div>\n                <input type=\"text\" formControlName=\"title\" class=\"form-control\" placeholder=\"Game Title\" autocomplete=\"title\" required>\n            </div>\n            <div class=\"input-group mb-3\">\n                <div class=\"input-group-prepend\">\n                  <span class=\"input-group-text\"><i class=\"icon-info\"></i></span>\n                </div>\n                <textarea cols=20 rows=5 formControlName=\"desc\" class=\"form-control\" placeholder=\"Game Description\" autocomplete=\"desc\" required></textarea>\n            </div>\n        </div>\n        <div class=\"card-footer\">\n            <button type=\"submit\" class=\"btn btn-block btn-success\">Submit Request</button>\n        </div>\n    </form>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n    <form [formGroup]=\"angForm\" (ngSubmit)=\"gamerequest(angForm)\" autocomplete=\"off\">\n        <div class=\"card-header\">\n            <h1>Request to add a game</h1>\n        </div>\n        <div class=\"card-body\">\n            <div class=\"input-group mb-3\">\n                <div class=\"input-group-prepend\">\n                  <span class=\"input-group-text\"><i class=\"icon-game-controller\"></i></span>\n                </div>\n                <input type=\"text\" formControlName=\"title\" class=\"form-control\" placeholder=\"Game Title\" autocomplete=\"title\" required>\n            </div>\n            <div class=\"input-group mb-3\">\n                <div class=\"input-group-prepend\">\n                  <span class=\"input-group-text\"><i class=\"icon-info\"></i></span>\n                </div>\n                <textarea cols=20 rows=5 formControlName=\"desc\" class=\"form-control\" placeholder=\"Game Description\" autocomplete=\"desc\" required></textarea>\n            </div>\n        </div>\n        <div class=\"card-footer\">\n            <button type=\"submit\" class=\"btn btn-block btn-success\" [disabled]=\"!angForm.valid\">Submit Request</button>\n        </div>\n    </form>\n</div>");
 
 /***/ }),
 
@@ -363,7 +363,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-body\">\n  <main class=\"main d-flex align-items-center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 mx-auto\">\n          <div class=\"card-group\">\n            <div class=\"card p-4\">\n              <div class=\"card-body\">\n                <form [formGroup]=\"angForm\" (ngSubmit)=\"postdata(angForm)\" autocomplete=\"off\">\n                  <h1>Login</h1>\n                  <p class=\"text-muted\">Sign In to your account</p>\n                  <div class=\"input-group mb-3\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-user\"></i></span>\n                    </div>\n                    <input type=\"text\" class=\"form-control\" formControlName=\"username\" placeholder=\"Username\" autocomplete=\"username\" required>\n                  </div>\n                  <div class=\"input-group mb-4\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                    </div>\n                    <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" autocomplete=\"current-password\" required>\n                  </div>\n                  <div class=\"row\">\n                    <div class=\"col-6\">\n                      <!--  [disabled]=\"!angForm.valid\" -->\n                      <button type=\"submit\" class=\"btn btn-primary px-4\" >Login</button>\n                    </div>\n                    <div class=\"col-6 text-right\">\n                      <button type=\"button\" class=\"btn btn-link px-0\">Forgot password?</button>\n                    </div>\n                  </div>\n                </form>\n              </div>\n            </div>\n            <div class=\"card text-white bg-primary py-5 d-md-down-none\" style=\"width:44%\">\n              <div class=\"card-body text-center\">\n                <div>\n                  <h2>Sign up</h2>\n                  <button type=\"button\" [routerLink]=\"['/register']\" class=\"btn btn-primary active mt-3\">Register Now!</button>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-body\">\n  <main class=\"main d-flex align-items-center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 mx-auto\">\n          <div class=\"card-group\">\n            <div class=\"card p-4\">\n              <div class=\"card-body\">\n                <form [formGroup]=\"angForm\" (ngSubmit)=\"postdata(angForm)\" autocomplete=\"off\">\n                  <h1>Login</h1>\n                  <p class=\"text-muted\">Sign In to your account</p>\n                  <div class=\"input-group mb-3\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-user\"></i></span>\n                    </div>\n                    <input type=\"text\" class=\"form-control\" formControlName=\"username\" placeholder=\"Username\" autocomplete=\"username\" required>\n                  </div>\n                  <div class=\"input-group mb-4\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                    </div>\n                    <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" autocomplete=\"current-password\" required>\n                  </div>\n                  <div class=\"row\">\n                    <div class=\"col-6\">\n                      <!--  [disabled]=\"!angForm.valid\" -->\n                      <button type=\"submit\" class=\"btn btn-primary px-4\">Login</button>\n                    </div>\n                    <!-- <div class=\"col-6 text-right\">\n                      <button type=\"button\" class=\"btn btn-link px-0\">Forgot password?</button>\n                    </div> -->\n                  </div>\n                </form>\n              </div>\n            </div>\n            <div class=\"card text-white bg-primary py-5 d-md-down-none\" style=\"width:44%\">\n              <div class=\"card-body text-center\">\n                <div>\n                  <h2>Sign up</h2>\n                  <button type=\"button\" [routerLink]=\"['/register']\" class=\"btn btn-primary active mt-3\">Register Now!</button>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n</div>\n");
 
 /***/ }),
 
@@ -376,7 +376,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-body\">\n  <main class=\"main d-flex align-items-center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-6 mx-auto\">\n          <div class=\"card mx-4\">\n            <div class=\"card-body p-4\">\n              <form [formGroup]=\"angForm\" (ngSubmit)=\"postdata(angForm)\" autocomplete=\"off\">\n                <h1>Register</h1>\n                <p class=\"text-muted\">Create your account</p>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-user\"></i></span>\n                  </div>\n                  <input type=\"text\" formControlName=\"username\" class=\"form-control\" placeholder=\"Username\" autocomplete=\"username\" required>\n                </div>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\">@</span>\n                  </div>\n                  <input type=\"text\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email\" autocomplete=\"email\" required>\n                </div>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                  </div>\n                  <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" autocomplete=\"new-password\" required>\n                </div>\n                <div class=\"input-group mb-4\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                  </div>\n                  <input type=\"password\" class=\"form-control\" formControlName=\"password_repeat\" placeholder=\"Repeat password\" autocomplete=\"new-password\" required>\n                </div>\n                <button type=\"submit\" class=\"btn btn-block btn-success\">Create Account</button>\n              </form>\n            </div>\n            <div class=\"card-footer p-4\">\n              <div class=\"row\">\n                <div class=\"col-6\">\n                  <button class=\"btn btn-block btn-facebook\" type=\"button\"><span>facebook</span></button>\n                </div>\n                <div class=\"col-6\">\n                  <button class=\"btn btn-block btn-twitter\" type=\"button\"><span>twitter</span></button>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-body\">\n  <main class=\"main d-flex align-items-center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-6 mx-auto\">\n          <div class=\"card mx-4\">\n            <div class=\"card-body p-4\">\n              <form [formGroup]=\"angForm\" (ngSubmit)=\"postdata(angForm)\" autocomplete=\"off\">\n                <h1>Register</h1>\n                <p class=\"text-muted\">Create your account</p>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-user\"></i></span>\n                  </div>\n                  <input type=\"text\" formControlName=\"username\" class=\"form-control\" placeholder=\"Username\" autocomplete=\"username\" required>\n                </div>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\">@</span>\n                  </div>\n                  <input type=\"text\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email\" autocomplete=\"email\" required>\n                </div>\n                <div class=\"input-group mb-3\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                  </div>\n                  <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" autocomplete=\"new-password\" required>\n                </div>\n                <div class=\"input-group mb-4\">\n                  <div class=\"input-group-prepend\">\n                    <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                  </div>\n                  <input type=\"password\" class=\"form-control\" formControlName=\"password_repeat\" placeholder=\"Repeat password\" autocomplete=\"new-password\" required>\n                </div>\n                <button type=\"submit\" class=\"btn btn-block btn-success\"> Create Account</button>\n              </form>\n            </div>\n            <div class=\"card-footer p-4\">\n              <div class=\"row\">\n                <div class=\"col-6\">\n                  <button class=\"btn btn-block btn-facebook\" type=\"button\"><span>facebook</span></button>\n                </div>\n                <div class=\"col-6\">\n                  <button class=\"btn btn-block btn-twitter\" type=\"button\"><span>twitter</span></button>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/review-requests/review-requests.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/review-requests/review-requests.component.html ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div *ngFor=\"let request of requests\" class=\"col-lg-3 d-flex align-items-stretch\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">{{request.Title}}</h5>\n                    <p class=\"card-text\">{{request.Descript}}</p>\n                </div>\n                <div class=\"card-footer\">\n                    <button type=\"submit\" (click)=\"requestApprove(request.Id)\" class=\"btn btn-block btn-success\">Request Accepted</button>\n                    <button type=\"submit\" (click)=\"requestDeny(request.Id)\" class=\"btn btn-block btn-danger\">Denied</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <button [routerLink]=\"['/dashboard']\" class=\"btn bnt-block btn-dark\">Go back</button>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -400,231 +413,6 @@ webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
 webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
-
-/***/ }),
-
-/***/ "./src/app/_nav.ts":
-/*!*************************!*\
-  !*** ./src/app/_nav.ts ***!
-  \*************************/
-/*! exports provided: navItems */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navItems", function() { return navItems; });
-var navItems = [
-    {
-        name: 'Dashboard',
-        url: '/dashboard',
-        icon: 'icon-speedometer',
-        badge: {
-            variant: 'info',
-            text: 'NEW'
-        }
-    },
-    {
-        title: true,
-        name: 'Theme'
-    },
-    {
-        name: 'Colors',
-        url: '/theme/colors',
-        icon: 'icon-drop'
-    },
-    {
-        name: 'Typography',
-        url: '/theme/typography',
-        icon: 'icon-pencil'
-    },
-    {
-        title: true,
-        name: 'Components'
-    },
-    {
-        name: 'Base',
-        url: '/base',
-        icon: 'icon-puzzle',
-        children: [
-            {
-                name: 'Cards',
-                url: '/base/cards',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Carousels',
-                url: '/base/carousels',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Collapses',
-                url: '/base/collapses',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Forms',
-                url: '/base/forms',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Navbars',
-                url: '/base/navbars',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Pagination',
-                url: '/base/paginations',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Popovers',
-                url: '/base/popovers',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Progress',
-                url: '/base/progress',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Switches',
-                url: '/base/switches',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Tables',
-                url: '/base/tables',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Tabs',
-                url: '/base/tabs',
-                icon: 'icon-puzzle'
-            },
-            {
-                name: 'Tooltips',
-                url: '/base/tooltips',
-                icon: 'icon-puzzle'
-            }
-        ]
-    },
-    {
-        name: 'Charts',
-        url: '/charts',
-        icon: 'icon-pie-chart'
-    },
-    {
-        name: 'Icons',
-        url: '/icons',
-        icon: 'icon-star',
-        children: [
-            {
-                name: 'CoreUI Icons',
-                url: '/icons/coreui-icons',
-                icon: 'icon-star',
-                badge: {
-                    variant: 'success',
-                    text: 'NEW'
-                }
-            },
-            {
-                name: 'Flags',
-                url: '/icons/flags',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Font Awesome',
-                url: '/icons/font-awesome',
-                icon: 'icon-star',
-                badge: {
-                    variant: 'secondary',
-                    text: '4.7'
-                }
-            },
-            {
-                name: 'Simple Line Icons',
-                url: '/icons/simple-line-icons',
-                icon: 'icon-star'
-            }
-        ]
-    },
-    {
-        name: 'Notifications',
-        url: '/notifications',
-        icon: 'icon-bell',
-        children: [
-            {
-                name: 'Alerts',
-                url: '/notifications/alerts',
-                icon: 'icon-bell'
-            },
-            {
-                name: 'Badges',
-                url: '/notifications/badges',
-                icon: 'icon-bell'
-            },
-            {
-                name: 'Modals',
-                url: '/notifications/modals',
-                icon: 'icon-bell'
-            }
-        ]
-    },
-    {
-        name: 'Widgets',
-        url: '/widgets',
-        icon: 'icon-calculator',
-        badge: {
-            variant: 'info',
-            text: 'NEW'
-        }
-    },
-    {
-        divider: true
-    },
-    {
-        title: true,
-        name: 'Extras',
-    },
-    {
-        name: 'Pages',
-        url: '/pages',
-        icon: 'icon-star',
-        children: [
-            {
-                name: 'Login',
-                url: '/login',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Register',
-                url: '/register',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Error 404',
-                url: '/404',
-                icon: 'icon-star'
-            },
-            {
-                name: 'Error 500',
-                url: '/500',
-                icon: 'icon-star'
-            }
-        ]
-    },
-    {
-        name: 'Disabled',
-        url: '/dashboard',
-        icon: 'icon-ban',
-        badge: {
-            variant: 'secondary',
-            text: 'NEW'
-        },
-        attributes: { disabled: true },
-    }
-];
-
 
 /***/ }),
 
@@ -712,6 +500,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/game-request/game-request.component */ "./src/app/views/game-request/game-request.component.ts");
+/* harmony import */ var _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./views/review-requests/review-requests.component */ "./src/app/views/review-requests/review-requests.component.ts");
 
 
 
@@ -735,6 +524,7 @@ var APP_CONTAINERS = [
 // Import routing module
 
 // Import 3rd party components
+
 
 
 
@@ -770,6 +560,7 @@ var AppModule = /** @class */ (function () {
                 _views_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
                 _views_register_register_component__WEBPACK_IMPORTED_MODULE_11__["RegisterComponent"],
                 _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_19__["GameRequestComponent"],
+                _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_20__["ReviewRequestsComponent"],
             ]),
             providers: [{
                     provide: _angular_common__WEBPACK_IMPORTED_MODULE_3__["LocationStrategy"],
@@ -806,10 +597,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/game-request/game-request.component */ "./src/app/views/game-request/game-request.component.ts");
 /* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
 /* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
+/* harmony import */ var _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/review-requests/review-requests.component */ "./src/app/views/review-requests/review-requests.component.ts");
 
 
 
 // Import Containers
+
 
 
 
@@ -856,7 +649,16 @@ var routes = [
         component: _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_7__["GameRequestComponent"],
         data: {
             title: 'Request Page'
-        }
+        },
+        canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
+    },
+    {
+        path: 'review',
+        component: _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_10__["ReviewRequestsComponent"],
+        data: {
+            title: 'Review requests Page'
+        },
+        canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
     },
     {
         path: '',
@@ -866,34 +668,10 @@ var routes = [
         },
         children: [
             {
-                path: 'base',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-base-base-module */ "views-base-base-module").then(__webpack_require__.bind(null, /*! ./views/base/base.module */ "./src/app/views/base/base.module.ts")).then(function (m) { return m.BaseModule; }); }
-            },
-            {
-                path: 'charts',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-chartjs-chartjs-module */ "views-chartjs-chartjs-module").then(__webpack_require__.bind(null, /*! ./views/chartjs/chartjs.module */ "./src/app/views/chartjs/chartjs.module.ts")).then(function (m) { return m.ChartJSModule; }); }
-            },
-            {
                 path: 'dashboard',
-                loadChildren: function () { return Promise.all(/*! import() | views-dashboard-dashboard-module */[__webpack_require__.e("default~views-dashboard-dashboard-module~views-theme-theme-module~views-widgets-widgets-module"), __webpack_require__.e("common"), __webpack_require__.e("views-dashboard-dashboard-module")]).then(__webpack_require__.bind(null, /*! ./views/dashboard/dashboard.module */ "./src/app/views/dashboard/dashboard.module.ts")).then(function (m) { return m.DashboardModule; }); },
+                loadChildren: function () { return __webpack_require__.e(/*! import() | views-dashboard-dashboard-module */ "views-dashboard-dashboard-module").then(__webpack_require__.bind(null, /*! ./views/dashboard/dashboard.module */ "./src/app/views/dashboard/dashboard.module.ts")).then(function (m) { return m.DashboardModule; }); },
                 canActivate: [_services_authguard_guard__WEBPACK_IMPORTED_MODULE_4__["AuthguardGuard"]]
             },
-            {
-                path: 'icons',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-icons-icons-module */ "views-icons-icons-module").then(__webpack_require__.bind(null, /*! ./views/icons/icons.module */ "./src/app/views/icons/icons.module.ts")).then(function (m) { return m.IconsModule; }); }
-            },
-            {
-                path: 'notifications',
-                loadChildren: function () { return __webpack_require__.e(/*! import() | views-notifications-notifications-module */ "views-notifications-notifications-module").then(__webpack_require__.bind(null, /*! ./views/notifications/notifications.module */ "./src/app/views/notifications/notifications.module.ts")).then(function (m) { return m.NotificationsModule; }); }
-            },
-            {
-                path: 'theme',
-                loadChildren: function () { return Promise.all(/*! import() | views-theme-theme-module */[__webpack_require__.e("default~views-dashboard-dashboard-module~views-theme-theme-module~views-widgets-widgets-module"), __webpack_require__.e("views-theme-theme-module")]).then(__webpack_require__.bind(null, /*! ./views/theme/theme.module */ "./src/app/views/theme/theme.module.ts")).then(function (m) { return m.ThemeModule; }); }
-            },
-            {
-                path: 'widgets',
-                loadChildren: function () { return Promise.all(/*! import() | views-widgets-widgets-module */[__webpack_require__.e("default~views-dashboard-dashboard-module~views-theme-theme-module~views-widgets-widgets-module"), __webpack_require__.e("common"), __webpack_require__.e("views-widgets-widgets-module")]).then(__webpack_require__.bind(null, /*! ./views/widgets/widgets.module */ "./src/app/views/widgets/widgets.module.ts")).then(function (m) { return m.WidgetsModule; }); }
-            }
         ]
     },
     { path: '**', component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_5__["P404Component"] }
@@ -926,23 +704,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DefaultLayoutComponent", function() { return DefaultLayoutComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../_nav */ "./src/app/_nav.ts");
+/* harmony import */ var _services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/dataservice.service */ "./src/app/services/dataservice.service.ts");
 
 
 
 var DefaultLayoutComponent = /** @class */ (function () {
-    function DefaultLayoutComponent() {
-        this.sidebarMinimized = false;
-        this.navItems = _nav__WEBPACK_IMPORTED_MODULE_2__["navItems"];
+    function DefaultLayoutComponent(dataservice) {
+        this.dataservice = dataservice;
     }
-    DefaultLayoutComponent.prototype.toggleMinimize = function (e) {
-        this.sidebarMinimized = e;
+    DefaultLayoutComponent.prototype.ngOnInit = function () {
+        this.usertype = this.dataservice.getAdmin();
     };
+    DefaultLayoutComponent.ctorParameters = function () { return [
+        { type: _services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] }
+    ]; };
     DefaultLayoutComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-dashboard',
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./default-layout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/containers/default-layout/default-layout.component.html")).default
-        })
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]])
     ], DefaultLayoutComponent);
     return DefaultLayoutComponent;
 }());
@@ -1058,13 +839,15 @@ var DataService = /** @class */ (function () {
     function DataService(httpClient) {
         this.httpClient = httpClient;
         this.baseUrl = "https://34.204.91.132/api/";
+        // baseUrl:string = "http://localhost:8000/";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     DataService.prototype.userlogin = function (userName, Password) {
         var _this = this;
-        return this.httpClient.post(this.baseUrl + '/login.php', { userName: userName, Password: Password })
+        return this.httpClient.post(this.baseUrl + 'login.php', { userName: userName, Password: Password })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (User) {
             _this.setToken(User[0].userName);
+            _this.setAdmin(User[0].Admin);
             _this.getLoggedInName.emit(true);
             return User;
         }));
@@ -1084,6 +867,15 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.deleteToken = function () {
         localStorage.removeItem('token');
+    };
+    DataService.prototype.setAdmin = function (usertype) {
+        localStorage.setItem('usertype', usertype);
+    };
+    DataService.prototype.getAdmin = function () {
+        return localStorage.getItem('usertype');
+    };
+    DataService.prototype.deleteAdmin = function () {
+        localStorage.removeItem('usertype');
     };
     DataService.prototype.isLoggedIn = function () {
         var usertoken = this.getToken();
@@ -1106,6 +898,64 @@ var DataService = /** @class */ (function () {
         Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
     ], DataService);
     return DataService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/getrequests.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/getrequests.service.ts ***!
+  \*************************************************/
+/*! exports provided: GetrequestsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetrequestsService", function() { return GetrequestsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/internal/operators/map */ "./node_modules/rxjs/internal/operators/map.js");
+/* harmony import */ var rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+// Filter games https://stackoverflow.com/questions/40678206/angular-2-filter-search-list
+var GetrequestsService = /** @class */ (function () {
+    function GetrequestsService(httpClient) {
+        this.httpClient = httpClient;
+        this.baseUrl = "https://34.204.91.132/api/";
+    }
+    GetrequestsService.prototype.getAllRequests = function () {
+        var _this = this;
+        return this.httpClient.get(this.baseUrl + 'getrequests.php').pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            _this.requests = res['data'];
+            return _this.requests;
+        }));
+    };
+    GetrequestsService.prototype.deleteRequest = function (Id) {
+        var body = JSON.stringify(Id);
+        this.httpClient.post(this.baseUrl + 'deleterequest.php', body)
+            .subscribe(function (msg) { return console.log(msg); });
+    };
+    GetrequestsService.prototype.approveRequest = function (Id) {
+        var body = JSON.stringify(Id.trim());
+        this.httpClient.post(this.baseUrl + 'approverequest.php', body)
+            .subscribe(function (msg) { return console.log(msg); });
+    };
+    GetrequestsService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    ]; };
+    GetrequestsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], GetrequestsService);
+    return GetrequestsService;
 }());
 
 
@@ -1262,7 +1112,7 @@ var GameRequestComponent = /** @class */ (function () {
         this.router = router;
         this.angForm = this.fb.group({
             title: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(1)]],
-            desc: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(500)]],
+            desc: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(500)]],
         });
     }
     GameRequestComponent.prototype.ngOnInit = function () {
@@ -1273,7 +1123,7 @@ var GameRequestComponent = /** @class */ (function () {
             .subscribe(function (data) {
             _this.router.navigate(['dashboard']);
         }, function (error) {
-            alert("Try a different game");
+            alert("Make the description a bit shorter");
         });
     };
     Object.defineProperty(GameRequestComponent.prototype, "title", {
@@ -1408,10 +1258,10 @@ var RegisterComponent = /** @class */ (function () {
         this.dataService = dataService;
         this.router = router;
         this.angForm = this.fb.group({
-            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            password_repeat: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)],
+            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)],
+            password_repeat: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)]],
         });
     }
     RegisterComponent.prototype.ngOnInit = function () {
@@ -1459,6 +1309,82 @@ var RegisterComponent = /** @class */ (function () {
         Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _services_dataservice_service__WEBPACK_IMPORTED_MODULE_5__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], RegisterComponent);
     return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/review-requests/review-requests.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/views/review-requests/review-requests.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3Jldmlldy1yZXF1ZXN0cy9yZXZpZXctcmVxdWVzdHMuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/views/review-requests/review-requests.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/views/review-requests/review-requests.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ReviewRequestsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewRequestsComponent", function() { return ReviewRequestsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_getrequests_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/getrequests.service */ "./src/app/services/getrequests.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var ReviewRequestsComponent = /** @class */ (function () {
+    function ReviewRequestsComponent(getrequestService, router) {
+        this.getrequestService = getrequestService;
+        this.router = router;
+    }
+    ReviewRequestsComponent.prototype.ngOnInit = function () {
+        this.getAllRequests();
+    };
+    ReviewRequestsComponent.prototype.getAllRequests = function () {
+        var _this = this;
+        this.getrequestService.getAllRequests().subscribe(function (res) {
+            _this.requests = res;
+        }, function (err) {
+            _this.error = err;
+        });
+    };
+    ReviewRequestsComponent.prototype.requestDeny = function (id) {
+        console.log("hmm..");
+        this.getrequestService.deleteRequest(id);
+        this.getAllRequests();
+    };
+    ReviewRequestsComponent.prototype.requestApprove = function (id) {
+        console.log("approving..");
+        this.getrequestService.approveRequest(id);
+        this.getAllRequests();
+    };
+    ReviewRequestsComponent.ctorParameters = function () { return [
+        { type: _services_getrequests_service__WEBPACK_IMPORTED_MODULE_2__["GetrequestsService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    ]; };
+    ReviewRequestsComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-review-requests',
+            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./review-requests.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/review-requests/review-requests.component.html")).default,
+            styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./review-requests.component.css */ "./src/app/views/review-requests/review-requests.component.css")).default]
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_services_getrequests_service__WEBPACK_IMPORTED_MODULE_2__["GetrequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], ReviewRequestsComponent);
+    return ReviewRequestsComponent;
 }());
 
 

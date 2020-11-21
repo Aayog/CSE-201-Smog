@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
-import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
-
+import { DataService } from '../../services/dataservice.service';
 @Component({
   templateUrl: 'dashboard.component.html'
 })

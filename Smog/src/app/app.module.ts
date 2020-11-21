@@ -43,6 +43,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GameRequestComponent } from './views/game-request/game-request.component';
+import { ReviewRequestsComponent } from './views/review-requests/review-requests.component';
 
 @NgModule({
   imports: [
@@ -69,6 +70,7 @@ import { GameRequestComponent } from './views/game-request/game-request.componen
     LoginComponent,
     RegisterComponent,
     GameRequestComponent,
+    ReviewRequestsComponent,
   ],
   providers: [{
     provide: LocationStrategy,
