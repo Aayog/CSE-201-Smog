@@ -1,9 +1,9 @@
 export class Comment{
-    public comment: string;
+    public Comment: string;
     public userName: string;
 
-    constructor(comment:string, userName: string) {
-      this.comment = comment;
+    constructor(Comment:string, userName: string) {
+      this.Comment = Comment;
       this.userName = userName;
     }
 }
