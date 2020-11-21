@@ -1,1 +1,4 @@
-{{title}}
+<div *ngFor="let comment of comments">
+    <b>{{comment.Username}} </b> : {{comment.Comment}}
+</div>
+<input type="text" [(ngModel)] = "comment" placeholder="Add comment.."><button type="submit" (click)="submitComment()" class="btn btn-secondary">Send</button>

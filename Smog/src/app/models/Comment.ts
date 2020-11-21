@@ -1,9 +1,10 @@
 export class Comment{
-    public comment: string;
-    public userName: string;
-
-    constructor(comment:string, userName: string) {
-      this.comment = comment;
-      this.userName = userName;
-    }
+  public Comment: string;
+  public userName: string;
+  public gTitle: string;
+  constructor(Comment:string, userName: string, gTitle: string) {
+    this.Comment = Comment;
+    this.userName = userName;
+    this.gTitle = gTitle;
+  }
 }

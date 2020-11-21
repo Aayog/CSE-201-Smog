@@ -28,4 +28,8 @@ export class CommentserviceService {
       )
     );
   }
+  addComment(comment:Comment){
+    console.log(comment);
+    return this.httpClient.post<any>(this.baseUrl + '/addcomment.php', { comment });
+  }
 }

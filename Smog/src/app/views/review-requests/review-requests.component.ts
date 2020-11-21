@@ -28,12 +28,10 @@ export class ReviewRequestsComponent implements OnInit {
     );
   }
   requestDeny(id: string) {
-    console.log("hmm..")
     this.getrequestService.deleteRequest(id);
     this.getAllRequests();
   }
   requestApprove(id: string) {
-    console.log("approving..")
     this.getrequestService.approveRequest(id);
     this.getAllRequests();
   }

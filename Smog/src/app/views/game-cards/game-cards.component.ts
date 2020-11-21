@@ -11,6 +11,7 @@ export class GameCardsComponent implements OnInit {
   games: Game[];
   error: string;
   gameGTitle: string;
+  comment: string;
   constructor(public gameService: GameserviceService) { }
 
   ngOnInit(): void {
@@ -26,8 +27,8 @@ export class GameCardsComponent implements OnInit {
       }
     );
   }
-  setTitle() {
-    
+  submitComment() {
+    console.log(this.comment);
   }
 
 }
