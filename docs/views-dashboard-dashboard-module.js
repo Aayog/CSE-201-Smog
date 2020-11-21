@@ -223,6 +223,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/*
+Dashboard DashboardRoutingModule
+inputs data from the dashboard.component doc.
+Names the Dasboard component routes and gathers information needed
+exports the DashboardRoutingModule class.
+*/
 var routes = [
     {
         path: '',
@@ -262,6 +268,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
+/*
+Dashboard Components
+Inputs the OnInit components,a style sheet, and custom CustomTooltips
+uses these to create a visual interface for the user. This dashboard will be underneath all of the other components. This class definition will be used in the dashboard module class.
+Exports the class so that it visible in the dashboard module class.
+*/
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent() {
     }
@@ -311,6 +323,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/*
+DashboardModule
+Imports the angular templates, the angular forms, the chart modules, BsDropdownModule, and a ButtonsModule from elsewhere.
+Imports the to other Dashboard classes that we wrote earlier to put them all in one location.  Declares a new module and assigns it.
+Exports them all as one DashboardModule class
+*/
 var DashboardModule = /** @class */ (function () {
     function DashboardModule() {
     }

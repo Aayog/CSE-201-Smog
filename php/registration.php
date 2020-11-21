@@ -1,10 +1,16 @@
 <?php
+/*
+Registration
+Uses the database information to determine if the user already exists
+input database information
+returns $authdata which is the data that the user inputs when registering.
+*/
 header("Access-Control-Allow-Origin: *");
 include_once("config.php");
-$postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
+$posts = file_get_contents("php://input");
+$request = json_decode($posts);
 
-if(isset($postdata) && !empty($postdata))
+if(isset($posts) && !empty($posts))
 {
   $userName = mysqli_real_escape_string($conn, trim($request->userName));
   $Password = mysqli_real_escape_string($conn, trim($request->Password));
@@ -13,13 +19,13 @@ if(isset($postdata) && !empty($postdata))
   if ($conn->query($sql) === TRUE) {
  
  
-    $authdata = [
+    $userdata = [
       'userName' => $userName,
 	    'Password' => '',
 	    'Email' => $Email,
       'Id'    => mysqli_insert_id($conn)
     ];
-    echo json_encode($authdata);
+    echo json_encode($userdata);
   }
 }
 ?>

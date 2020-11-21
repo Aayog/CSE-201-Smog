@@ -3,7 +3,13 @@ import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angula
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/dataservice.service';
- 
+//ref: https://www.mtutorial.com/angular-login-logout-registration-example-php-api
+/*
+Register Component.
+Imports infromation from the data base, and the information from the user.
+Validates the user given information with the data in the database and then if there is no match, gives the user the ability to log in to the site and adds them to the database.
+outputs errors if the email is incorrect.
+*/
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'register.component.html'

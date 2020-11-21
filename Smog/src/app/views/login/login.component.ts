@@ -6,7 +6,11 @@ import { first } from 'rxjs/operators';
 
 
 //ref: https://www.mtutorial.com/angular-login-logout-registration-example-php-api
-
+/*
+LoginComponent
+imports information from the database, and create a form for users to put their login information into.
+Exports nothing, unless there is an error with the login information.
+*/
 
 @Component({
   selector: 'app-dashboard',

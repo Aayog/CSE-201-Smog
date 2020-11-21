@@ -1105,6 +1105,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//ref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-apiref: https://www.mtutorial.com/angular-login-logout-registration-example-php-api
 var GameRequestComponent = /** @class */ (function () {
     function GameRequestComponent(fb, gameRequestService, router) {
         this.fb = fb;
@@ -1179,6 +1180,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //ref: https://www.mtutorial.com/angular-login-logout-registration-example-php-api
+/*
+LoginComponent
+imports information from the database, and create a form for users to put their login information into.
+Exports nothing, unless there is an error with the login information.
+*/
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(fb, dataService, router) {
         this.fb = fb;
@@ -1252,6 +1258,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//ref: https://www.mtutorial.com/angular-login-logout-registration-example-php-api
+/*
+Register Component.
+Imports infromation from the data base, and the information from the user.
+Validates the user given information with the data in the database and then if there is no match, gives the user the ability to log in to the site and adds them to the database.
+outputs errors if the email is incorrect.
+*/
 var RegisterComponent = /** @class */ (function () {
     function RegisterComponent(fb, dataService, router) {
         this.fb = fb;

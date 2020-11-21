@@ -1,4 +1,10 @@
 <?php
+/*
+Login
+Inputs the database of available usernames and passords, as well as the data form the user
+Decodes the data from the database, and compares it with the user input.
+If they match, then the method returns with a 400 code. otherwise the program returns ith a 404 error.
+*/
 include_once("config.php");
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
