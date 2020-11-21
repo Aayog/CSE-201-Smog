@@ -18,8 +18,9 @@ export class CommentserviceService {
 
   constructor(private httpClient : HttpClient) { }
   
-  getAllComments(): Observable<Comment[]> {
-    return this.httpClient.get(`${this.baseUrl}/comments.php`).pipe(
+  getAllComments(title: string): Observable<Comment[]> {
+    const body = JSON.stringify(title);
+    return this.httpClient.post<any>(this.baseUrl+ '/comments.php', body).pipe(
       map((res) => {
           this.comments = res['data'];
           return this.comments;

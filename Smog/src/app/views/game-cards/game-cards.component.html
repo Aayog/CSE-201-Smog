@@ -7,6 +7,7 @@
             <h5 class="card-title">{{game.Title}}</h5>
             <p class="card-text">{{game.Descript}}</p>
             <h1>Comments: </h1>
+                <app-comment [title]="game.Title"></app-comment>
             <a [href]="game.Link" class="align-self-end btn btn-primary">See more..</a>
         </div>
 </div>

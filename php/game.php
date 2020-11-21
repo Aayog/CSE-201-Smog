@@ -5,6 +5,7 @@ include_once("config.php");
 
 $sql = "SELECT * FROM Game";
 $games = [];
+$title;
 
 if($result = mysqli_query($conn,$sql))
 {

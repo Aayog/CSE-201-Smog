@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Game } from '../../models/Game';
 import { GameserviceService } from '../../services/gameservice.service';
 import { GameFilterPipe } from './gamefilterpipe';
@@ -11,6 +11,7 @@ import { GameFilterPipe } from './gamefilterpipe';
 export class GameCardsComponent implements OnInit {
   games: Game[];
   error: string;
+  gameGTitle: string;
   constructor(public gameService: GameserviceService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,9 @@ export class GameCardsComponent implements OnInit {
         this.error = err;
       }
     );
+  }
+  setTitle() {
+    
   }
 
 }
