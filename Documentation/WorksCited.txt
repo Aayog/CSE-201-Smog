@@ -1,0 +1,8 @@
+﻿In the code, we list which specific videos were used in each file. Here is a full list of videos though.
+Tutorials used:
+* Getting list of games
+   * https://phpenthusiast.com/blog/develop-angular-php-app-getting-the-list-of-items
+* Searching titles of games
+   * https://stackoverflow.com/questions/40678206/angular-2-filter-search-list
+* Login and register codes
+   * https://www.mtutorial.com/angular-login-logout-registration-example-php-api

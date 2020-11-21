@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngFor=\"let comment of comments\">\r\n    <b>{{comment.Username}} </b> : {{comment.Comment}}\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngFor=\"let comment of comments\">\n    <b>{{comment.Username}} </b> : {{comment.Comment}}\n</div>");
 
 /***/ }),
 
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"animated fadeIn\">\r\n    <!-- <input class=\"form-control\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\"> -->\r\n    <!-- {{usertype}} -->\r\n    <app-game-cards></app-game-cards>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"animated fadeIn\">\n    <!-- <input class=\"form-control\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\"> -->\n    <!-- {{usertype}} -->\n    <app-game-cards></app-game-cards>\n</div>\n");
 
 /***/ }),
 
@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n    <input type=\"text\" [(ngModel)]=\"queryString\" id=\"search\" aria-label=\"Search\" placeholder=\"Search any game\" class=\"form-control\">\r\n    <div class=\"row\">\r\n        <div *ngFor=\"let game of games | GameFilterPipe: queryString\" class=\"col-lg-3 d-flex align-items-stretch\">\r\n            <div class=\"card\" style=\"width: 18rem;\">\r\n                <a [href]=\"game.Link\">\r\n                <img [src]=\"game.Img\" class=\"card-img-top\" alt=\"...\">\r\n            </a>\r\n                <div class=\"card-body\">\r\n                    <h5 class=\"card-title\">{{game.Title}}</h5>\r\n                    <p class=\"card-text\">{{game.Descript}}</p> \r\n                    <div class=\"card-footer\">\r\n                        <app-comment [title]=\"game.Title\"></app-comment>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <input type=\"text\" [(ngModel)]=\"queryString\" id=\"search\" aria-label=\"Search\" placeholder=\"Search any game\" class=\"form-control\">\n    <div class=\"row\">\n        <div *ngFor=\"let game of games | GameFilterPipe: queryString\" class=\"col-lg-3 d-flex align-items-stretch\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <a [href]=\"game.Link\">\n                <img [src]=\"game.Img\" class=\"card-img-top\" alt=\"...\">\n            </a>\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">{{game.Title}}</h5>\n                    <p class=\"card-text\">{{game.Descript}}</p> \n                    <div class=\"card-footer\">\n                        <app-comment [title]=\"game.Title\"></app-comment>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -343,7 +343,7 @@ var DashboardModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".card {\r\n    overflow-y: auto;\r\n}\r\nh1 {\r\n    font-size: 15px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3MvZ2FtZS1jYXJkcy9nYW1lLWNhcmRzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLGVBQWU7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9nYW1lLWNhcmRzL2dhbWUtY2FyZHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkIHtcclxuICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbn1cclxuaDEge1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".card {\n    overflow-y: auto;\n}\nh1 {\n    font-size: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3MvZ2FtZS1jYXJkcy9nYW1lLWNhcmRzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLGVBQWU7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9nYW1lLWNhcmRzL2dhbWUtY2FyZHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkIHtcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xufVxuaDEge1xuICAgIGZvbnQtc2l6ZTogMTVweDtcbn0iXX0= */");
 
 /***/ }),
 
