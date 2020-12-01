@@ -26,8 +26,5 @@ export class GameCardsComponent implements OnInit {
       }
     );
   }
-  setTitle() {
-    
-  }
 
 }

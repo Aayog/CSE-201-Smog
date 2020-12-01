@@ -9,6 +9,8 @@ import { GameCardsComponent } from '../game-cards/game-cards.component';
 import { CommonModule } from '@angular/common';
 import { GameFilterPipe } from '../game-cards/gamefilterpipe';
 import { CommentComponent } from '../comment/comment.component';
+import { UserCommentComponent } from '../user-comment/user-comment.component';
+
 /*
 DashboardModule
 Imports the angular templates, the angular forms, the chart modules, BsDropdownModule, and a ButtonsModule from elsewhere.
@@ -23,7 +25,7 @@ Exports them all as one DashboardModule class
     CommonModule,
     BsDropdownModule,
   ],
-  declarations: [ DashboardComponent, GameCardsComponent, GameFilterPipe, CommentComponent ],
+  declarations: [ DashboardComponent, GameCardsComponent, GameFilterPipe, CommentComponent, UserCommentComponent ],
   exports: [GameFilterPipe]
 })
 export class DashboardModule { }

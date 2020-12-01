@@ -40,10 +40,11 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GameRequestComponent } from './views/game-request/game-request.component';
 import { ReviewRequestsComponent } from './views/review-requests/review-requests.component';
+import { UserCommentComponent } from './views/user-comment/user-comment.component';
 
 @NgModule({
   imports: [
@@ -60,7 +61,8 @@ import { ReviewRequestsComponent } from './views/review-requests/review-requests
     TabsModule.forRoot(),
     ChartsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -70,7 +72,7 @@ import { ReviewRequestsComponent } from './views/review-requests/review-requests
     LoginComponent,
     RegisterComponent,
     GameRequestComponent,
-    ReviewRequestsComponent,
+    ReviewRequestsComponent
   ],
   providers: [{
     provide: LocationStrategy,

@@ -11,12 +11,12 @@ export class RequestService {
 
   redirectUrl: string;
  
-  baseUrl:string = "https://34.204.91.132/api/";
+  baseUrl:string = "http://100.24.132.17/api/";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-  constructor(private httpClient : HttpClient, private dataService: DataService) { }
+  constructor(private httpsClient : HttpClient, private dataService: DataService) { }
   
   public gamerequest(title, desc) {
     const username = this.dataService.getToken();
-    return this.httpClient.post<any>(this.baseUrl + 'gamerequests.php', { title, desc, username });
+    return this.httpsClient.post<any>(this.baseUrl + 'gamerequests.php', { title, desc, username });
   }
 }

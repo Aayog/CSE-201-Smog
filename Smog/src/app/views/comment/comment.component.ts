@@ -16,7 +16,7 @@ export class CommentComponent implements OnInit {
   constructor(public commentService: CommentserviceService, game: GameCardsComponent) { }
   @Input() title: string;
   ngOnInit(): void {
-    this.getComments();
+    this.reload();
   }
   getComments(): void {
     this.commentService.getAllComments(this.title).subscribe(
@@ -27,6 +27,9 @@ export class CommentComponent implements OnInit {
         this.error = err;
       }
     );
+  }
+  reload(){
+    this.getComments();
   }
 }
 

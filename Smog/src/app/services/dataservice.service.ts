@@ -9,14 +9,14 @@ import { User } from '../models/User';
 export class DataService {
   redirectUrl: string;
  
-  baseUrl:string = "https://34.204.91.132/api/";
-  // baseUrl:string = "http://localhost:8000/";
+  baseUrl:string = "http://100.24.132.17/api/";
+  // baseUrl:string = "https://localhost:8000/";
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-constructor(private httpClient : HttpClient) { }
+constructor(private httpsClient : HttpClient) { }
 
 public userlogin(userName, Password) {
-  return this.httpClient.post<any>(this.baseUrl + 'login.php', { userName, Password })
+  return this.httpsClient.post<any>(this.baseUrl + 'login.php', { userName, Password })
       .pipe(map(User => {
           this.setToken(User[0].userName);
           this.setAdmin(User[0].Admin);
@@ -28,7 +28,7 @@ public userlogin(userName, Password) {
 }
 
 public userregistration(userName, Password, Email) {
-  return this.httpClient.post<any>(this.baseUrl + 'registration.php', { userName, Password, Email })
+  return this.httpsClient.post<any>(this.baseUrl + 'registration.php', { userName, Password, Email })
       .pipe(map(User => {
           return User;
       }));

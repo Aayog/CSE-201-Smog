@@ -550,7 +550,8 @@ var AppModule = /** @class */ (function () {
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_15__["TabsModule"].forRoot(),
                 ng2_charts__WEBPACK_IMPORTED_MODULE_16__["ChartsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_17__["ReactiveFormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_17__["FormsModule"]
             ],
             declarations: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spreadArrays"])([
                 _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]
@@ -560,7 +561,7 @@ var AppModule = /** @class */ (function () {
                 _views_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
                 _views_register_register_component__WEBPACK_IMPORTED_MODULE_11__["RegisterComponent"],
                 _views_game_request_game_request_component__WEBPACK_IMPORTED_MODULE_19__["GameRequestComponent"],
-                _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_20__["ReviewRequestsComponent"],
+                _views_review_requests_review_requests_component__WEBPACK_IMPORTED_MODULE_20__["ReviewRequestsComponent"]
             ]),
             providers: [{
                     provide: _angular_common__WEBPACK_IMPORTED_MODULE_3__["LocationStrategy"],
@@ -836,15 +837,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var DataService = /** @class */ (function () {
-    function DataService(httpClient) {
-        this.httpClient = httpClient;
-        this.baseUrl = "https://34.204.91.132/api/";
-        // baseUrl:string = "http://localhost:8000/";
+    function DataService(httpsClient) {
+        this.httpsClient = httpsClient;
+        this.baseUrl = "http://100.24.132.17/api/";
+        // baseUrl:string = "https://localhost:8000/";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     DataService.prototype.userlogin = function (userName, Password) {
         var _this = this;
-        return this.httpClient.post(this.baseUrl + 'login.php', { userName: userName, Password: Password })
+        return this.httpsClient.post(this.baseUrl + 'login.php', { userName: userName, Password: Password })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (User) {
             _this.setToken(User[0].userName);
             _this.setAdmin(User[0].Admin);
@@ -853,7 +854,7 @@ var DataService = /** @class */ (function () {
         }));
     };
     DataService.prototype.userregistration = function (userName, Password, Email) {
-        return this.httpClient.post(this.baseUrl + 'registration.php', { userName: userName, Password: Password, Email: Email })
+        return this.httpsClient.post(this.baseUrl + 'registration.php', { userName: userName, Password: Password, Email: Email })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (User) {
             return User;
         }));
@@ -925,25 +926,25 @@ __webpack_require__.r(__webpack_exports__);
 
 // Filter games https://stackoverflow.com/questions/40678206/angular-2-filter-search-list
 var GetrequestsService = /** @class */ (function () {
-    function GetrequestsService(httpClient) {
-        this.httpClient = httpClient;
-        this.baseUrl = "https://34.204.91.132/api/";
+    function GetrequestsService(httpsClient) {
+        this.httpsClient = httpsClient;
+        this.baseUrl = "http://100.24.132.17/api/";
     }
     GetrequestsService.prototype.getAllRequests = function () {
         var _this = this;
-        return this.httpClient.get(this.baseUrl + 'getrequests.php').pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.httpsClient.get(this.baseUrl + 'getrequests.php').pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             _this.requests = res['data'];
             return _this.requests;
         }));
     };
     GetrequestsService.prototype.deleteRequest = function (Id) {
         var body = JSON.stringify(Id);
-        this.httpClient.post(this.baseUrl + 'deleterequest.php', body)
+        this.httpsClient.post(this.baseUrl + 'deleterequest.php', body)
             .subscribe(function (msg) { return console.log(msg); });
     };
     GetrequestsService.prototype.approveRequest = function (Id) {
         var body = JSON.stringify(Id.trim());
-        this.httpClient.post(this.baseUrl + 'approverequest.php', body)
+        this.httpsClient.post(this.baseUrl + 'approverequest.php', body)
             .subscribe(function (msg) { return console.log(msg); });
     };
     GetrequestsService.ctorParameters = function () { return [
@@ -981,15 +982,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var RequestService = /** @class */ (function () {
-    function RequestService(httpClient, dataService) {
-        this.httpClient = httpClient;
+    function RequestService(httpsClient, dataService) {
+        this.httpsClient = httpsClient;
         this.dataService = dataService;
-        this.baseUrl = "https://34.204.91.132/api/";
+        this.baseUrl = "http://100.24.132.17/api/";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     RequestService.prototype.gamerequest = function (title, desc) {
         var username = this.dataService.getToken();
-        return this.httpClient.post(this.baseUrl + 'gamerequests.php', { title: title, desc: desc, username: username });
+        return this.httpsClient.post(this.baseUrl + 'gamerequests.php', { title: title, desc: desc, username: username });
     };
     RequestService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },

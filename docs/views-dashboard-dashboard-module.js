@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngFor=\"let comment of comments\">\n    <b>{{comment.Username}} </b> : {{comment.Comment}}\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngFor=\"let comment of comments\">\n    <b>{{comment.Username}} </b> : {{comment.Comment}}\n</div>\n");
 
 /***/ }),
 
@@ -35,7 +35,43 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <input type=\"text\" [(ngModel)]=\"queryString\" id=\"search\" aria-label=\"Search\" placeholder=\"Search any game\" class=\"form-control\">\n    <div class=\"row\">\n        <div *ngFor=\"let game of games | GameFilterPipe: queryString\" class=\"col-lg-3 d-flex align-items-stretch\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <a [href]=\"game.Link\">\n                <img [src]=\"game.Img\" class=\"card-img-top\" alt=\"...\">\n            </a>\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">{{game.Title}}</h5>\n                    <p class=\"card-text\">{{game.Descript}}</p> \n                </div>\n                <div class=\"card-footer\">\n                    <app-comment [title]=\"game.Title\"></app-comment>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <input type=\"text\" [(ngModel)]=\"queryString\" id=\"search\" aria-label=\"Search\" placeholder=\"Search any game\" class=\"form-control\">\n    <div class=\"row\">\n        <div *ngFor=\"let game of games | GameFilterPipe: queryString\" class=\"col-lg-3 d-flex align-items-stretch\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <a [href]=\"game.Link\">\n                <img [src]=\"game.Img\" class=\"card-img-top\" alt=\"...\">\n            </a>\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">{{game.Title}}</h5>\n                    <p class=\"card-text\">{{game.Descript}}</p> \n                </div>\n                <div class=\"card-footer\">\n                    <app-comment [title]=\"game.Title\"></app-comment>\n                    <app-user-comment [title]=\"game.Title\" [parent]=\"this\"></app-user-comment>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/user-comment/user-comment.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/user-comment/user-comment.component.html ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<strong>{{userName}}</strong> : <input type=\"text\" [(ngModel)]=\"comment\" (keyup.enter)=\"submitComment()\">");
+
+/***/ }),
+
+/***/ "./src/app/models/Comment.ts":
+/*!***********************************!*\
+  !*** ./src/app/models/Comment.ts ***!
+  \***********************************/
+/*! exports provided: Comment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Comment", function() { return Comment; });
+var Comment = /** @class */ (function () {
+    function Comment(Comment, userName, gTitle) {
+        this.Comment = Comment;
+        this.userName = userName;
+        this.gTitle = gTitle;
+    }
+    return Comment;
+}());
+
+
 
 /***/ }),
 
@@ -60,17 +96,22 @@ __webpack_require__.r(__webpack_exports__);
 
 // Filter games https://stackoverflow.com/questions/40678206/angular-2-filter-search-list
 var CommentserviceService = /** @class */ (function () {
-    function CommentserviceService(httpClient) {
-        this.httpClient = httpClient;
-        this.baseUrl = "https://34.204.91.132/api";
+    function CommentserviceService(httpsClient) {
+        this.httpsClient = httpsClient;
+        this.baseUrl = "http://100.24.132.17/api";
     }
     CommentserviceService.prototype.getAllComments = function (title) {
         var _this = this;
         var body = JSON.stringify(title);
-        return this.httpClient.post(this.baseUrl + '/comments.php', body).pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.httpsClient.post(this.baseUrl + '/comments.php', body).pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             _this.comments = res['data'];
             return _this.comments;
         }));
+    };
+    CommentserviceService.prototype.postComment = function (comment) {
+        var body = JSON.stringify(comment);
+        return this.httpsClient.post(this.baseUrl + '/addcomment.php', body)
+            .subscribe();
     };
     CommentserviceService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
@@ -109,13 +150,13 @@ __webpack_require__.r(__webpack_exports__);
 
 // Filter games https://stackoverflow.com/questions/40678206/angular-2-filter-search-list
 var GameserviceService = /** @class */ (function () {
-    function GameserviceService(httpClient) {
-        this.httpClient = httpClient;
-        this.baseUrl = "https://34.204.91.132/api/";
+    function GameserviceService(httpsClient) {
+        this.httpsClient = httpsClient;
+        this.baseUrl = "http://100.24.132.17/api/";
     }
     GameserviceService.prototype.getAllGames = function () {
         var _this = this;
-        return this.httpClient.get(this.baseUrl + "game.php").pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.httpsClient.get(this.baseUrl + "game.php").pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             _this.games = res['data'];
             return _this.games;
         }));
@@ -172,7 +213,7 @@ var CommentComponent = /** @class */ (function () {
         this.commentService = commentService;
     }
     CommentComponent.prototype.ngOnInit = function () {
-        this.getComments();
+        this.reload();
     };
     CommentComponent.prototype.getComments = function () {
         var _this = this;
@@ -181,6 +222,9 @@ var CommentComponent = /** @class */ (function () {
         }, function (err) {
             _this.error = err;
         });
+    };
+    CommentComponent.prototype.reload = function () {
+        this.getComments();
     };
     CommentComponent.ctorParameters = function () { return [
         { type: _services_commentservice_service__WEBPACK_IMPORTED_MODULE_2__["CommentserviceService"] },
@@ -312,6 +356,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _game_cards_gamefilterpipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../game-cards/gamefilterpipe */ "./src/app/views/game-cards/gamefilterpipe.ts");
 /* harmony import */ var _comment_comment_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../comment/comment.component */ "./src/app/views/comment/comment.component.ts");
+/* harmony import */ var _user_comment_user_comment_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../user-comment/user-comment.component */ "./src/app/views/user-comment/user-comment.component.ts");
+
 
 
 
@@ -341,7 +387,7 @@ var DashboardModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_8__["CommonModule"],
                 ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_4__["BsDropdownModule"],
             ],
-            declarations: [_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _game_cards_game_cards_component__WEBPACK_IMPORTED_MODULE_7__["GameCardsComponent"], _game_cards_gamefilterpipe__WEBPACK_IMPORTED_MODULE_9__["GameFilterPipe"], _comment_comment_component__WEBPACK_IMPORTED_MODULE_10__["CommentComponent"]],
+            declarations: [_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _game_cards_game_cards_component__WEBPACK_IMPORTED_MODULE_7__["GameCardsComponent"], _game_cards_gamefilterpipe__WEBPACK_IMPORTED_MODULE_9__["GameFilterPipe"], _comment_comment_component__WEBPACK_IMPORTED_MODULE_10__["CommentComponent"], _user_comment_user_comment_component__WEBPACK_IMPORTED_MODULE_11__["UserCommentComponent"]],
             exports: [_game_cards_gamefilterpipe__WEBPACK_IMPORTED_MODULE_9__["GameFilterPipe"]]
         })
     ], DashboardModule);
@@ -396,8 +442,6 @@ var GameCardsComponent = /** @class */ (function () {
             _this.error = err;
         });
     };
-    GameCardsComponent.prototype.setTitle = function () {
-    };
     GameCardsComponent.ctorParameters = function () { return [
         { type: _services_gameservice_service__WEBPACK_IMPORTED_MODULE_2__["GameserviceService"] }
     ]; };
@@ -448,6 +492,85 @@ var GameFilterPipe = /** @class */ (function () {
         })
     ], GameFilterPipe);
     return GameFilterPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/user-comment/user-comment.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/views/user-comment/user-comment.component.css ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3VzZXItY29tbWVudC91c2VyLWNvbW1lbnQuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/views/user-comment/user-comment.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/views/user-comment/user-comment.component.ts ***!
+  \**************************************************************/
+/*! exports provided: UserCommentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserCommentComponent", function() { return UserCommentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/dataservice.service */ "./src/app/services/dataservice.service.ts");
+/* harmony import */ var _services_commentservice_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/commentservice.service */ "./src/app/services/commentservice.service.ts");
+/* harmony import */ var _models_Comment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../models/Comment */ "./src/app/models/Comment.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _game_cards_game_cards_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../game-cards/game-cards.component */ "./src/app/views/game-cards/game-cards.component.ts");
+
+
+
+
+
+
+
+var UserCommentComponent = /** @class */ (function () {
+    function UserCommentComponent(dataService, commentService, router) {
+        this.dataService = dataService;
+        this.commentService = commentService;
+        this.router = router;
+    }
+    UserCommentComponent.prototype.ngOnInit = function () {
+        this.userName = this.dataService.getToken();
+    };
+    UserCommentComponent.prototype.submitComment = function () {
+        this.commentService.postComment(new _models_Comment__WEBPACK_IMPORTED_MODULE_4__["Comment"](this.comment, this.userName, this.title));
+        this.comment = '';
+        this.parent.ngOnInit();
+    };
+    UserCommentComponent.ctorParameters = function () { return [
+        { type: _services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] },
+        { type: _services_commentservice_service__WEBPACK_IMPORTED_MODULE_3__["CommentserviceService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+    ]; };
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+    ], UserCommentComponent.prototype, "title", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", _game_cards_game_cards_component__WEBPACK_IMPORTED_MODULE_6__["GameCardsComponent"])
+    ], UserCommentComponent.prototype, "parent", void 0);
+    UserCommentComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-user-comment',
+            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./user-comment.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/user-comment/user-comment.component.html")).default,
+            styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./user-comment.component.css */ "./src/app/views/user-comment/user-comment.component.css")).default]
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_services_dataservice_service__WEBPACK_IMPORTED_MODULE_2__["DataService"], _services_commentservice_service__WEBPACK_IMPORTED_MODULE_3__["CommentserviceService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+    ], UserCommentComponent);
+    return UserCommentComponent;
 }());
 
 

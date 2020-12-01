@@ -12,20 +12,25 @@ import { Comment } from '../models/Comment';
 export class CommentserviceService {
   redirectUrl: string;
  
-  baseUrl:string = "https://34.204.91.132/api";
+  baseUrl:string = "http://100.24.132.17/api";
 
   comments: Comment[];
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpsClient : HttpClient) { }
   
   getAllComments(title: string): Observable<Comment[]> {
     const body = JSON.stringify(title);
-    return this.httpClient.post<any>(this.baseUrl+ '/comments.php', body).pipe(
+    return this.httpsClient.post<any>(this.baseUrl+ '/comments.php', body).pipe(
       map((res) => {
           this.comments = res['data'];
           return this.comments;
         }
       )
     );
+  }
+  postComment(comment: Comment){
+    const body = JSON.stringify(comment);
+    return this.httpsClient.post<any>(this.baseUrl+ '/addcomment.php', body)
+      .subscribe();
   }
 }
