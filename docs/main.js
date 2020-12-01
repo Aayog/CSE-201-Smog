@@ -839,7 +839,7 @@ __webpack_require__.r(__webpack_exports__);
 var DataService = /** @class */ (function () {
     function DataService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "http://100.24.132.17/api/";
+        this.baseUrl = "https://100.24.132.17/api/";
         // baseUrl:string = "https://localhost:8000/";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
@@ -928,7 +928,7 @@ __webpack_require__.r(__webpack_exports__);
 var GetrequestsService = /** @class */ (function () {
     function GetrequestsService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "http://100.24.132.17/api/";
+        this.baseUrl = "https://100.24.132.17/api/";
     }
     GetrequestsService.prototype.getAllRequests = function () {
         var _this = this;
@@ -985,7 +985,7 @@ var RequestService = /** @class */ (function () {
     function RequestService(httpsClient, dataService) {
         this.httpsClient = httpsClient;
         this.dataService = dataService;
-        this.baseUrl = "http://100.24.132.17/api/";
+        this.baseUrl = "https://100.24.132.17/api/";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     RequestService.prototype.gamerequest = function (title, desc) {

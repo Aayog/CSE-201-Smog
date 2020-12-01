@@ -12,7 +12,7 @@ import { Comment } from '../models/Comment';
 export class CommentserviceService {
   redirectUrl: string;
  
-  baseUrl:string = "http://100.24.132.17/api";
+  baseUrl:string = "https://100.24.132.17/api";
 
   comments: Comment[];
 

@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 var CommentserviceService = /** @class */ (function () {
     function CommentserviceService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "http://100.24.132.17/api";
+        this.baseUrl = "https://100.24.132.17/api";
     }
     CommentserviceService.prototype.getAllComments = function (title) {
         var _this = this;
@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 var GameserviceService = /** @class */ (function () {
     function GameserviceService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "http://100.24.132.17/api/";
+        this.baseUrl = "https://100.24.132.17/api/";
     }
     GameserviceService.prototype.getAllGames = function () {
         var _this = this;
