@@ -11,4 +11,4 @@ The build file should start the local php server as well as the node server for 
 ### Test
 http://localhost:8000/test.php
 
-Alternative test: https://34.204.91.132/api/test.php
+Alternative test: https://100.24.132.17/api/test.php
