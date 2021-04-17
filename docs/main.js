@@ -492,7 +492,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
 /* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
 /* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
-/* harmony import */ var _coreui_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @coreui/angular */ "./node_modules/@coreui/angular/fesm5/coreui-angular.js");
+/* harmony import */ var _coreui_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @coreui/angular */ "./node_modules/@coreui/angular/fesm2015/coreui-angular.js");
 /* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
 /* harmony import */ var ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-bootstrap/dropdown */ "./node_modules/ngx-bootstrap/dropdown/fesm5/ngx-bootstrap-dropdown.js");
 /* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
@@ -839,13 +839,13 @@ __webpack_require__.r(__webpack_exports__);
 var DataService = /** @class */ (function () {
     function DataService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "https://100.24.132.17/api/";
-        // baseUrl:string = "https://localhost:8000/";
+        this.baseUrl = "http://localhost:8080";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     DataService.prototype.userlogin = function (userName, Password) {
         var _this = this;
-        return this.httpsClient.post(this.baseUrl + 'login.php', { userName: userName, Password: Password })
+        console.log(userName, Password);
+        return this.httpsClient.post(this.baseUrl + '/login.php', { userName: userName, Password: Password })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (User) {
             _this.setToken(User[0].userName);
             _this.setAdmin(User[0].Admin);
@@ -854,7 +854,7 @@ var DataService = /** @class */ (function () {
         }));
     };
     DataService.prototype.userregistration = function (userName, Password, Email) {
-        return this.httpsClient.post(this.baseUrl + 'registration.php', { userName: userName, Password: Password, Email: Email })
+        return this.httpsClient.post(this.baseUrl + '/registration.php', { userName: userName, Password: Password, Email: Email })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (User) {
             return User;
         }));
@@ -928,23 +928,23 @@ __webpack_require__.r(__webpack_exports__);
 var GetrequestsService = /** @class */ (function () {
     function GetrequestsService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "https://100.24.132.17/api/";
+        this.baseUrl = "http://localhost:8080";
     }
     GetrequestsService.prototype.getAllRequests = function () {
         var _this = this;
-        return this.httpsClient.get(this.baseUrl + 'getrequests.php').pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.httpsClient.get(this.baseUrl + '/getrequests.php').pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             _this.requests = res['data'];
             return _this.requests;
         }));
     };
     GetrequestsService.prototype.deleteRequest = function (Id) {
         var body = JSON.stringify(Id);
-        this.httpsClient.post(this.baseUrl + 'deleterequest.php', body)
+        this.httpsClient.post(this.baseUrl + '/deleterequest.php', body)
             .subscribe(function (msg) { return console.log(msg); });
     };
     GetrequestsService.prototype.approveRequest = function (Id) {
         var body = JSON.stringify(Id.trim());
-        this.httpsClient.post(this.baseUrl + 'approverequest.php', body)
+        this.httpsClient.post(this.baseUrl + '/approverequest.php', body)
             .subscribe(function (msg) { return console.log(msg); });
     };
     GetrequestsService.ctorParameters = function () { return [
@@ -985,7 +985,7 @@ var RequestService = /** @class */ (function () {
     function RequestService(httpsClient, dataService) {
         this.httpsClient = httpsClient;
         this.dataService = dataService;
-        this.baseUrl = "https://100.24.132.17/api/";
+        this.baseUrl = "http://localhost:8080//";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     RequestService.prototype.gamerequest = function (title, desc) {
@@ -1192,8 +1192,8 @@ var LoginComponent = /** @class */ (function () {
         this.dataService = dataService;
         this.router = router;
         this.angForm = this.fb.group({
-            username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)]],
-            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("[A-Za-z0-9!@#$^&*]*")]]
+            username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(4)]],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(4), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("[A-Za-z0-9!@#$^&*]*")]]
         });
     }
     LoginComponent.prototype.ngOnInit = function () { };
@@ -1273,8 +1273,8 @@ var RegisterComponent = /** @class */ (function () {
         this.router = router;
         this.angForm = this.fb.group({
             email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)],
-            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)]],
+            username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)]],
             password_repeat: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)]],
         });
     }

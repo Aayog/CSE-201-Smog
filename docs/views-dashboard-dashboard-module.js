@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 var CommentserviceService = /** @class */ (function () {
     function CommentserviceService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "https://100.24.132.17/api";
+        this.baseUrl = "http://localhost:8080";
     }
     CommentserviceService.prototype.getAllComments = function (title) {
         var _this = this;
@@ -152,11 +152,11 @@ __webpack_require__.r(__webpack_exports__);
 var GameserviceService = /** @class */ (function () {
     function GameserviceService(httpsClient) {
         this.httpsClient = httpsClient;
-        this.baseUrl = "https://100.24.132.17/api/";
+        this.baseUrl = "http://localhost:8080";
     }
     GameserviceService.prototype.getAllGames = function () {
         var _this = this;
-        return this.httpsClient.get(this.baseUrl + "game.php").pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.httpsClient.get(this.baseUrl + "/game.php").pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             _this.games = res['data'];
             return _this.games;
         }));
