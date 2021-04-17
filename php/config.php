@@ -9,10 +9,10 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 //ip address for servername
 //if that doesn’t work 
 //phrasal-concord-292413:us-central1:mustain-99
-$servername = "104.154.66.238";
-$username = "root";
-$password = "9Reddolphinscarvetoast!";
-$dbname = "Project";
+$servername = "35.188.139.239";
+$username = "db-smog";
+$password = "CAO8m7t8nDme1AGn";
+$dbname = "SmogProject";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

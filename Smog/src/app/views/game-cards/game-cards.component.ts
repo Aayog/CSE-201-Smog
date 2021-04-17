@@ -11,6 +11,7 @@ export class GameCardsComponent implements OnInit {
   games: Game[];
   error: string;
   gameGTitle: string;
+  queryString: string;
   constructor(public gameService: GameserviceService) { }
 
   ngOnInit(): void {

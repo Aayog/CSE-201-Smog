@@ -12,14 +12,14 @@ import { Game } from '../models/Game';
 export class GameserviceService {
   redirectUrl: string;
  
-  baseUrl:string = "https://100.24.132.17/api/";
+  baseUrl:string = "http://localhost:8080";
 
   games: Game[];
 
   constructor(private httpsClient : HttpClient) { }
   
   getAllGames(): Observable<Game[]> {
-    return this.httpsClient.get(`${this.baseUrl}game.php`).pipe(
+    return this.httpsClient.get(`${this.baseUrl}/game.php`).pipe(
       map((res) => {
           this.games = res['data'];
           return this.games;

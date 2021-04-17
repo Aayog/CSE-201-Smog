@@ -11,7 +11,7 @@ export class RequestService {
 
   redirectUrl: string;
  
-  baseUrl:string = "https://100.24.132.17/api/";
+  baseUrl:string = "http://localhost:8080//";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpsClient : HttpClient, private dataService: DataService) { }
   

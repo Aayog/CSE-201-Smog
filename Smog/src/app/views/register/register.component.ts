@@ -20,9 +20,9 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder,private dataService: DataService,private router:Router) {
  
     this.angForm = this.fb.group({
-      email: ['', [Validators.required,Validators.minLength(5), Validators.email]],
-      password: ['', Validators.required, Validators.minLength(5)],
-      username: ['', Validators.required, Validators.minLength(5)],
+      email: ['', [Validators.required, Validators.minLength(5), Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
+      username: ['', [Validators.required, Validators.minLength(5)]],
       password_repeat: ['', [Validators.required, Validators.minLength(5)]],
     }
     );
@@ -47,4 +47,3 @@ export class RegisterComponent implements OnInit {
   get username() { return this.angForm.get('username'); }
   get password_repeat() { return this.angForm.get('password_repeat'); }
 }
- 

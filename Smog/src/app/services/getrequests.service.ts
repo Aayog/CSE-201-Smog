@@ -13,7 +13,7 @@ import { Request } from '../models/Request';
 export class GetrequestsService {
   redirectUrl: string;
  
-  baseUrl:string = "https://100.24.132.17/api/";
+  baseUrl:string = "http://localhost:8080";
   // baseUrl:string = "https://localhost:8000/";
 
   requests: Request[];
@@ -21,7 +21,7 @@ export class GetrequestsService {
   constructor(private httpsClient : HttpClient) { }
   
   getAllRequests(): Observable<Request[]> {
-    return this.httpsClient.get(this.baseUrl + 'getrequests.php').pipe(
+    return this.httpsClient.get(this.baseUrl + '/getrequests.php').pipe(
       map((res) => {
           this.requests = res['data'];
           return this.requests;
@@ -32,7 +32,7 @@ export class GetrequestsService {
 
   deleteRequest(Id: string) {
     const body = JSON.stringify(Id);
-    this.httpsClient.post<any>(this.baseUrl + 'deleterequest.php', body)
+    this.httpsClient.post<any>(this.baseUrl + '/deleterequest.php', body)
       .subscribe(
         msg => console.log(msg)
       );
@@ -40,7 +40,7 @@ export class GetrequestsService {
 
   approveRequest(Id: string) {
     const body = JSON.stringify(Id.trim());
-    this.httpsClient.post<any>(this.baseUrl + 'approverequest.php', body)
+    this.httpsClient.post<any>(this.baseUrl + '/approverequest.php', body)
       .subscribe(
         msg => console.log(msg)
       );
